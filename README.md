@@ -26,7 +26,7 @@ For Microsoft 365, configure the customer’s own Entra application as a web app
 
 ## Test installations
 
-Use separate empty databases for each installation profile. The core test suite automatically exercises each supported work source that is installed.
+Use separate empty databases for each installation profile. The core test suite checks To-do and Helpdesk when those sources are installed.
 
 ```sh
 odoo-bin -d my_day_empty -i daadit_my_day_core --test-tags /daadit_my_day_core --stop-after-init
