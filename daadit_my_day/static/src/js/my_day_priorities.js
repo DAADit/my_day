@@ -5,7 +5,10 @@ import { Component, onWillStart, useRef, useState } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 import { useSortable } from "@web/core/utils/sortable_owl";
 
-const KIND_LABEL = { ticket: "Helpdesk", task: _t("Task"), own: _t("Personal work"), activity: _t("Activity") };
+const KIND_LABEL = {
+    ticket: "Helpdesk", task: _t("Task"), todo: _t("To-do"), own: _t("Personal work"),
+    activity: _t("Activity"),
+};
 
 function formatMinutes(total) {
     const minutes = Math.round(total || 0);
@@ -28,7 +31,7 @@ export class MyDayPriorities extends Component {
         this.listRef = useRef("list");
         this.state = useState({
             items: [], fixed: [], employees: [], scope: "mine",
-            hasCustom: false, dirty: false, busy: false, filter: "all",
+            hasCustom: false, hasTodo: false, dirty: false, busy: false, filter: "all",
         });
         useSortable({
             ref: this.listRef,
@@ -55,12 +58,19 @@ export class MyDayPriorities extends Component {
     }
 
     get visibleItems() {
-        const filter = this.state.filter;
-        return filter === "all" ? this.state.items : this.state.items.filter((item) => item.kind === filter);
+        return this.state.items.filter((item) => this.matchesFilter(item));
+    }
+
+    get visibleFixed() {
+        return this.state.fixed.filter((item) => this.matchesFilter(item));
+    }
+
+    matchesFilter(item) {
+        return this.state.filter === "all" || item.kind === this.state.filter;
     }
 
     get counts() {
-        const counts = { all: this.state.items.length, ticket: 0, task: 0, activity: 0 };
+        const counts = { all: this.state.items.length, ticket: 0, task: 0, todo: 0, activity: 0 };
         for (const item of this.state.items) {
             counts[item.kind] = (counts[item.kind] || 0) + 1;
         }
@@ -75,6 +85,7 @@ export class MyDayPriorities extends Component {
             this.state.fixed = result.fixed;
             this.state.employees = result.employees;
             this.state.hasCustom = result.has_custom;
+            this.state.hasTodo = result.has_todo;
             this.state.dirty = false;
         } finally {
             this.state.busy = false;

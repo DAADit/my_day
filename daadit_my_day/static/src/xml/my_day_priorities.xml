@@ -44,6 +44,9 @@
                         t-on-click="() => this.setFilter('ticket')">Helpdesk (<t t-esc="counts.ticket"/>)</button>
                 <button type="button" t-att-class="'btn btn-sm ' + (state.filter === 'task' ? 'btn-primary' : 'btn-light')"
                         t-on-click="() => this.setFilter('task')">Tasks (<t t-esc="counts.task"/>)</button>
+                <button t-if="state.hasTodo" type="button"
+                        t-att-class="'btn btn-sm ' + (state.filter === 'todo' ? 'btn-primary' : 'btn-light')"
+                        t-on-click="() => this.setFilter('todo')">To-dos (<t t-esc="counts.todo"/>)</button>
                 <button type="button" t-att-class="'btn btn-sm ' + (state.filter === 'activity' ? 'btn-primary' : 'btn-light')"
                         t-on-click="() => this.setFilter('activity')">Activities (<t t-esc="counts.activity"/>)</button>
             </div>
@@ -96,13 +99,13 @@
                     </span>
                 </li>
             </ol>
-            <p t-if="!state.busy and !visibleItems.length" class="o_my_day_empty">No open work matches these filters.</p>
+            <p t-if="!state.busy and !visibleItems.length and !visibleFixed.length" class="o_my_day_empty">No open work matches these filters.</p>
 
-            <div t-if="state.fixed.length" class="o_my_day_prio_fixed">
+            <div t-if="visibleFixed.length" class="o_my_day_prio_fixed">
                 <h3 class="h6">Already fixed in the schedule</h3>
                 <p class="small text-muted">You have pinned, started or protected these focus blocks. They stay in place.</p>
                 <ul class="list-unstyled mb-0">
-                    <li t-foreach="state.fixed" t-as="item" t-key="item.key + '-' + item_index"
+                    <li t-foreach="visibleFixed" t-as="item" t-key="item.key + '-' + item_index"
                         t-att-class="'o_my_day_block kind_' + item.kind">
                         <span class="o_my_day_body">
                             <button type="button" class="btn btn-link p-0 text-start o_my_day_title"

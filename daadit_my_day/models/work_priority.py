@@ -118,7 +118,12 @@ class MyDayPriorities(models.AbstractModel):
             view = self.env.ref(
                 "project_todo.project_task_view_todo_form", raise_if_not_found=False,
             )
-            item["open_view_id"] = view.id if view else False
+            if view:
+                item["open_view_id"] = view.id
+                if not record.parent_id:
+                    item["kind"] = "todo"
+                    if not item["fixed"]:
+                        item["subtitle"] = ""
         return item
 
     def _priority_team_items(self, scope):
@@ -203,9 +208,13 @@ class MyDayPriorities(models.AbstractModel):
     def get_priorities(self, scope=None):
         """Al het open werk in de volgorde waarin Mijn Dag het zou inplannen."""
         users = self._priority_employees().sorted("name")
+        has_todo = bool(self.env.ref(
+            "project_todo.project_task_view_todo_form", raise_if_not_found=False,
+        ))
         if scope not in (None, self.env.uid):
             result = self._team_priorities(scope)
             result["employees"] = [{"id": user.id, "name": user.name} for user in users]
+            result["has_todo"] = has_todo
             return result
         employee = self._employee()
         tz = self._tz(employee)
@@ -256,6 +265,7 @@ class MyDayPriorities(models.AbstractModel):
             payloads.append(payload)
         return {
             "items": payloads,
+            "has_todo": has_todo,
             "fixed": fixed_items,
             "has_custom": bool(self._priority_map()),
             "employees": [{"id": user.id, "name": user.name} for user in users],

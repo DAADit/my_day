@@ -184,6 +184,27 @@ class TestPrioritiesAndFollowup(common.TransactionCase):
         self.assertIn("project.task-%d" % self.tasks[0].id, keys)
         self.assertIn("helpdesk.ticket-%d" % self.ticket.id, keys)
 
+    def test_priorities_distinguish_todos_from_project_tasks(self):
+        view = self.env.ref(
+            "project_todo.project_task_view_todo_form", raise_if_not_found=False,
+        )
+        if not view:
+            self.skipTest("Odoo To-do is not installed")
+        todo = self.env["project.task"].with_user(self.user).create({
+            "name": "Priority to-do fixture", "user_ids": [(6, 0, self.user.ids)],
+        })
+        for scope in (None, "all"):
+            with self.subTest(scope=scope):
+                result = self.model.get_priorities(scope)
+                self.assertTrue(result["has_todo"])
+                items = {item["key"]: item for item in result["items"]}
+                self.assertEqual(items[f"project.task-{self.tasks[0].id}"]["kind"], "task")
+                row = items[f"project.task-{todo.id}"]
+                self.assertEqual(row["kind"], "todo")
+                self.assertEqual(row["res_model"], "project.task")
+                self.assertEqual((row["open_model"], row["open_id"]), ("project.task", todo.id))
+                self.assertEqual(row["open_view_id"], view.id)
+
     # Gantt --------------------------------------------------------------------------
     def test_gantt_marks_moves(self):
         before = [{"date": "2026-11-11", "weekday": "wo", "items": [{
