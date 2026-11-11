@@ -1,0 +1,2051 @@
+# Dutch translations for My Day.
+msgid ""
+msgstr ""
+"Project-Id-Version: daadit_my_day 19.0\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: DAADit\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_followup.py:0
+msgid " since %s"
+msgstr " sinds %s"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "%s available"
+msgstr "%s beschikbaar"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "%s done"
+msgstr "%s klaar"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "%s free"
+msgstr "%s vrij"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_estimate.py:0
+msgid "%s min remaining outside scheduled blocks"
+msgstr "%s min resterend buiten geplande blokken"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "%s scheduled"
+msgstr "%s gepland"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "%s to do"
+msgstr "%s te doen"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_followup.py:0
+msgid "%s%s · follow up"
+msgstr "%s%s · opvolgen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+msgid "%sh"
+msgstr "%su"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+msgid "%sh %sm"
+msgstr "%su%s"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid ". Click to schedule it now."
+msgstr ". Klik om het nu in te plannen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid ". No helpdesk work today."
+msgstr ". Geen helpdesk vandaag."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "1 hour"
+msgstr "1 uur"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "15 minutes longer"
+msgstr "15 minuten langer"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "15 minutes shorter"
+msgstr "15 minuten korter"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "1h 30m"
+msgstr "1u30"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "2 hours"
+msgstr "2 uur"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "4 hours"
+msgstr "4 uur"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "A previously scheduled block has already started."
+msgstr "Een eerder gepland blok is al begonnen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "A previously scheduled block no longer fits in the schedule."
+msgstr "Een eerder gepland blok past niet meer in het rooster."
+
+#. module: daadit_my_day
+#: model:ir.model.fields,help:daadit_my_day.field_planning_role__daadit_no_helpdesk
+msgid "A shift with this role keeps the day free of tickets in My Day. If the shift has a project, only tasks from that project are scheduled that day."
+msgstr "Een dienst met deze rol houdt de hele dag vrij van tickets in Mijn Dag. Staat er een project op de dienst, dan worden die dag alleen taken van dat project ingepland."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Actions"
+msgstr "Acties"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Activities ("
+msgstr "Activiteiten ("
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "Activities do not log time"
+msgstr "Activiteiten schrijven geen uren"
+
+#. module: daadit_my_day
+#. odoo-python
+#. odoo-javascript
+#: code:addons/daadit_my_day/models/work_activity.py:0
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__planning_slot__daadit_day_kind__activity
+msgid "Activity"
+msgstr "Activiteit"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "Activity completed."
+msgstr "Activiteit voltooid."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "Activity due by %s: %s"
+msgstr "Activiteit vóór %s: %s"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Add"
+msgstr "Toevoegen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Add estimate"
+msgstr "Schatting toevoegen"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Added manually"
+msgstr "Zelf toegevoegd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "All ("
+msgstr "Alles ("
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Allow this block to move if an urgent ticket cannot otherwise fit today"
+msgstr "Mag verschuiven als een urgent ticket vandaag anders niet past"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Already fixed in the schedule"
+msgstr "Al vast ingepland"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "An appointment now uses this time."
+msgstr "Een afspraak gebruikt inmiddels deze tijd."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "Another block now uses this time."
+msgstr "Een ander blok gebruikt inmiddels deze tijd."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Another employee is responsible for scheduling this task."
+msgstr "Een andere medewerker is verantwoordelijk voor de planning van deze taak."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Apply schedule"
+msgstr "Planning toepassen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+msgid "Appointment"
+msgstr "Afspraak"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Assigned employees can schedule work in parallel"
+msgstr "Toegewezen medewerkers mogen tegelijk plannen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Back to My Day"
+msgstr "Terug naar Mijn Dag"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Block"
+msgstr "Blok"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Block work"
+msgstr "Blokkeren"
+
+#. module: daadit_my_day
+#. odoo-python
+#. odoo-javascript
+#: code:addons/daadit_my_day/models/work_followup.py:0
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__daadit_my_day_work_blocking__daadit_day_block_kind__blocked
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__helpdesk_ticket__daadit_day_block_kind__blocked
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__project_task__daadit_day_block_kind__blocked
+msgid "Blocked"
+msgstr "Geblokkeerd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Blocked / waiting for customer"
+msgstr "Geblokkeerd / wacht op klant"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_daadit_my_day_work_blocking__daadit_day_blocked_on
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_ticket__daadit_day_blocked_on
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_blocked_on
+msgid "Blocked since"
+msgstr "Geblokkeerd sinds"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_estimate.py:0
+msgid "Choose 0 to 4800 minutes and a block duration of 5 to 180 minutes."
+msgstr "Kies 0 tot 4800 minuten en een blokduur van 5 tot 180 minuten."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_review.py:0
+msgid "Choose a period of up to 31 days."
+msgstr "Kies een periode van maximaal 31 dagen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Choose a ticket or task."
+msgstr "Kies een ticket of taak."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Choose a type and enter a reason for blocking."
+msgstr "Kies een type en vul een blokkeerreden in."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/shared_work.py:0
+msgid "Choose an active employee assigned to this task."
+msgstr "Kies een actieve medewerker die aan deze taak is toegewezen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_focus.py:0
+msgid "Choose an open block for today or later."
+msgstr "Kies een open blok op vandaag of later."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Choose an owner and a follow-up date from today onward."
+msgstr "Kies een verantwoordelijke en een opvolgdatum vanaf vandaag."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_review.py:0
+msgid "Choose to finish or defer the block."
+msgstr "Kies afronden of doorschuiven."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_focus.py:0
+msgid "Choose up to three daily goals."
+msgstr "Kies maximaal drie dagdoelen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Click Reschedule."
+msgstr "Klik op Opnieuw plannen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Close and next"
+msgstr "Afsluiten en volgende"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.actions.client,name:daadit_my_day.action_my_day_review
+#: model:ir.ui.menu,name:daadit_my_day.menu_my_day_review
+msgid "Close day"
+msgstr "Dag afsluiten"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Close the ticket or task and continue"
+msgstr "Sluit het ticket of de taak echt af en ga door"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Complete activity"
+msgstr "Activiteit voltooien"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Complete this activity"
+msgstr "Voltooi alleen deze activiteit"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: model:ir.actions.client,name:daadit_my_day.action_my_day_done
+#: model:ir.ui.menu,name:daadit_my_day.menu_my_day_done
+msgid "Completed"
+msgstr "Gedaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Correct time"
+msgstr "Tijd corrigeren"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Current time"
+msgstr "Huidige tijd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Custom order"
+msgstr "Eigen volgorde"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Customer is waiting for a reply"
+msgstr "Klant wacht op antwoord"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Daily goal"
+msgstr "Dagdoel"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Daily goal (up to three per day)"
+msgstr "Dagdoel (maximaal drie per dag)"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Daily goal and focus"
+msgstr "Dagdoel en focus"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Daily goals"
+msgstr "Dagdoelen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Daily schedule as a Gantt chart at the top"
+msgstr "Dagplanning als Gantt bovenaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Daily schedule as a list on the left"
+msgstr "Dagplanning als lijst links"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Daily schedule view"
+msgstr "Weergave van de dagplanning"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Date"
+msgstr "Datum"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Day review"
+msgstr "Dagafsluiting"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Default order"
+msgstr "Standaardvolgorde"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Default rule"
+msgstr "Standaardregel"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Defer"
+msgstr "Doorschuiven"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Deferred to %s."
+msgstr "Doorgeschoven naar %s."
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_no_hours
+msgid "Do not log time"
+msgstr "Geen uren schrijven"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__planning_slot__daadit_day_state__done
+msgid "Done"
+msgstr "Klaar"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Done and next"
+msgstr "Klaar en volgende"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_done_at
+msgid "Done on"
+msgstr "Klaar op"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Done. Here is what is next."
+msgstr "Klaar. Dit is het volgende."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Draft reply is ready"
+msgstr "Concept-antwoord staat klaar"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Drag to move"
+msgstr "Sleep om te verplaatsen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Drag your work into the order you want. My Day schedules it from top to bottom and places new work according to the default rules. Urgent tickets always come first."
+msgstr "Sleep je werk in de volgorde waarin je het wilt doen. Mijn Dag plant van boven naar beneden. Nieuw werk schuift in op de plek waar het volgens de standaardregels hoort. Urgente tickets gaan altijd voor."
+
+#. module: daadit_my_day
+#: model:ir.model.constraint,message:daadit_my_day.constraint_daadit_my_day_priority_user_record_unique
+msgid "Each work item can appear only once in the order."
+msgstr "Elk werk staat één keer in de volgorde."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Edit follow-up"
+msgstr "Opvolging wijzigen"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_timer_seconds
+msgid "Elapsed seconds"
+msgstr "Getelde seconden"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Employee"
+msgstr "Medewerker"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Enable timesheets"
+msgstr "Uren aan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Enter 0 to clear the estimate. Rescheduling splits the remaining work into blocks that fit."
+msgstr "Gebruik 0 om de schatting te wissen. Opnieuw plannen verdeelt resterend werk over passende blokken."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Enter a name for your work."
+msgstr "Geef je werk een naam."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_review.py:0
+msgid "Enter the minutes worked and a reason for the correction."
+msgstr "Vul gewerkte minuten en een reden voor de correctie in."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_estimate.py:0
+msgid "Estimate used up · review it"
+msgstr "Schatting verbruikt · bekijk opnieuw"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Finish block"
+msgstr "Blok afronden"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_priority.py:0
+msgid "Fixed at %s"
+msgstr "Vast op %s"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_focus.py:0
+msgid "Focus block moved for an urgent ticket"
+msgstr "Focusblok verschoven voor urgent ticket"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Follow up"
+msgstr "Opvolgen"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "Follow up by %s"
+msgstr "Opvolgen vóór %s"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Follow up now."
+msgstr "Opvolgen nu."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.model.fields,field_description:daadit_my_day.field_daadit_my_day_work_blocking__daadit_day_followup_date
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_ticket__daadit_day_followup_date
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_followup_date
+msgid "Follow-up date"
+msgstr "Opvolgdatum"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_daadit_my_day_work_blocking__daadit_day_followup_user_id
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_ticket__daadit_day_followup_user_id
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_followup_user_id
+msgid "Follow-up owner"
+msgstr "Verantwoordelijke voor opvolging"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Follow-up scheduled."
+msgstr "Opvolging ingepland."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "From"
+msgstr "Van"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Hide daily schedule"
+msgstr "Dagplanning verbergen"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "High priority"
+msgstr "Hoge prioriteit"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "Included in the ticket or task block"
+msgstr "Meegenomen in het blok van het ticket of de taak"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Internal work: no timesheet"
+msgstr "Intern werk: geen uren"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_timer_beat_at
+msgid "Last timer heartbeat"
+msgstr "Laatste teken van leven"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Later today"
+msgstr "Later vandaag"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Link an employee to your user account to schedule your day."
+msgstr "Aan je gebruiker hangt geen medewerker, dus er is geen dag te plannen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "List of changes"
+msgstr "Wijzigingen als lijst"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Loading your work…"
+msgstr "Je werk wordt opgehaald…"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Logged:"
+msgstr "Geschreven:"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_daadit_my_day_work_blocking__daadit_day_estimate_block_max
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_ticket__daadit_day_estimate_block_max
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_estimate_block_max
+msgid "Maximum block duration in minutes"
+msgstr "Maximale blokduur in minuten"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Maximum minutes per block"
+msgstr "Maximale minuten per blok"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Minutes worked"
+msgstr "Gewerkte minuten"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Missing"
+msgstr "Ontbreekt"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Move down"
+msgstr "Eén omlaag"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Move to top"
+msgstr "Bovenaan zetten"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Move up"
+msgstr "Eén omhoog"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+msgid "Moved"
+msgstr "Verschoven"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+msgid "Moved ("
+msgstr "Verschoven ("
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "Moved to available working hours on another day"
+msgstr "Doorgeschoven naar beschikbare roostertijd op een andere dag"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: model:ir.actions.client,name:daadit_my_day.action_my_day
+#: model:ir.model,name:daadit_my_day.model_daadit_my_day
+#: model:ir.ui.menu,name:daadit_my_day.menu_my_day_root
+#: model:ir.module.module,shortdesc:base.module_daadit_my_day
+msgid "My Day"
+msgstr "Mijn Dag"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_kind
+msgid "My Day block type"
+msgstr "Soort blok in Mijn Dag"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_daadit_my_day_work_blocking__daadit_day_block_kind
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_ticket__daadit_day_block_kind
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_block_kind
+msgid "My Day blocking status"
+msgstr "Mijn Dag-blokkade"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_res_users__daadit_my_day_planned_on
+msgid "My Day last scheduled on"
+msgstr "Mijn Dag laatst ingepland op"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_sequence
+msgid "My Day order"
+msgstr "Volgorde in Mijn Dag"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,help:daadit_my_day.field_helpdesk_team__daadit_day_ticket_minutes
+msgid "My Day reserves this much time for a ticket from this team. Leave blank or enter 0 to use the general default. Match this to the team’s SLA."
+msgstr "Zoveel tijd reserveert Mijn Dag voor een ticket van dit team. Leeg of 0 gebruikt de algemene standaard. Stem dit af op de SLA van het team."
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_plan_owner_id
+msgid "My Day scheduling owner"
+msgstr "Mijn Dag-planner"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_state
+msgid "My Day status"
+msgstr "Status in Mijn Dag"
+
+#. module: daadit_my_day
+#: model:ir.model,name:daadit_my_day.model_daadit_my_day_work_blocking
+msgid "My Day work blocking"
+msgstr "Blokkade voor Mijn Dag"
+
+#. module: daadit_my_day
+#: model:ir.model,name:daadit_my_day.model_daadit_my_day_priority
+msgid "My Day: custom work order"
+msgstr "Mijn Dag: eigen volgorde"
+
+#. module: daadit_my_day
+#: model:ir.rule,name:daadit_my_day.rule_my_day_priority_own
+msgid "My Day: own work order only"
+msgstr "Mijn Dag: alleen je eigen volgorde"
+
+#. module: daadit_my_day
+#: model:ir.cron,name:daadit_my_day.cron_plan_days
+msgid "My Day: reschedule working days"
+msgstr "Mijn Dag: werkdagen opnieuw indelen"
+
+#. module: daadit_my_day
+#: model:ir.cron,name:daadit_my_day.cron_fill_days
+msgid "My Day: schedule new work and update timers"
+msgstr "Mijn Dag: nieuw werk indelen en klokken bijwerken"
+
+#. module: daadit_my_day
+#: model_terms:ir.ui.view,arch_db:daadit_my_day.helpdesk_team_view_form_my_day
+msgid "My Day: time per ticket"
+msgstr "Mijn Dag: tijd per ticket"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_team__daadit_day_ticket_minutes
+msgid "My Day: time per ticket (minutes)"
+msgstr "Mijn Dag: tijd per ticket (minuten)"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_work_part
+msgid "My part of the task"
+msgstr "Mijn deel van de taak"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "My part of this block"
+msgstr "Mijn werkdeel in dit blok"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+msgid "New ("
+msgstr "Nieuw ("
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "New urgent work:"
+msgstr "Urgent binnengekomen:"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+msgid "Newly scheduled"
+msgstr "Nieuw ingepland"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Next day"
+msgstr "Volgende dag"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "No block in the new schedule"
+msgstr "Geen blok in de nieuwe indeling"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+#: code:addons/daadit_my_day/models/work_followup.py:0
+msgid "No customer"
+msgstr "Geen klant"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "No helpdesk"
+msgstr "Geen helpdesk"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_role__daadit_no_helpdesk
+msgid "No helpdesk on this day"
+msgstr "Geen helpdesk op deze dag"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "No project to log time against"
+msgstr "Geen project om uren op te schrijven"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "No timesheet"
+msgstr "Geen uren"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "No timesheet for %s"
+msgstr "Geen uren voor %s"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "No work blocks in this period."
+msgstr "Geen werkblokken in deze periode."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+msgid "Not scheduled to work"
+msgstr "Niet ingeroosterd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Nothing is scheduled for this day."
+msgstr "Er staat nog niets op deze dag."
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_activity_id
+msgid "Odoo activity"
+msgstr "Odoo-activiteit"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Only open work can be moved."
+msgstr "Alleen open werk kan worden verplaatst."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Only open work can be scheduled outside working hours."
+msgstr "Alleen open werk kan buiten werktijd worden gepland."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Open task"
+msgstr "Openstaande taak"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Overdue (%s)"
+msgstr "Deadline verlopen (%s)"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Owner"
+msgstr "Verantwoordelijke"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Owner:"
+msgstr "Verantwoordelijke:"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Pause"
+msgstr "Pauzeren"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Pause active timer"
+msgstr "Actieve timer pauzeren"
+
+#. module: daadit_my_day
+#. odoo-python
+#. odoo-javascript
+#: code:addons/daadit_my_day/models/day_review.py:0
+#: code:addons/daadit_my_day/models/my_day.py:0
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__planning_slot__daadit_day_kind__own
+msgid "Personal work"
+msgstr "Eigen werk"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Personal work is not logged"
+msgstr "Eigen werk wordt niet geschreven"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Personal work. Click Done and next when finished."
+msgstr "Eigen werk. Klik op Klaar en volgende als dit af is."
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_pinned
+msgid "Pinned"
+msgstr "Zelf vastgezet"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Preparing your day…"
+msgstr "Je dag wordt klaargezet…"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Previous day"
+msgstr "Vorige dag"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+msgid "Previous time"
+msgstr "Vorige plek"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+#: model:ir.actions.client,name:daadit_my_day.action_my_day_priorities
+#: model:ir.ui.menu,name:daadit_my_day.menu_my_day_priorities
+msgid "Priorities"
+msgstr "Prioriteiten"
+
+#. module: daadit_my_day
+#: model:planning.role,name:daadit_my_day.role_no_helpdesk
+msgid "Project day / off-site (no helpdesk)"
+msgstr "Projectdag / extern (geen helpdesk)"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Proposed schedule"
+msgstr "Voorstel herplanning"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Proposed time"
+msgstr "Voorgestelde tijd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Protect this focus block when rescheduling"
+msgstr "Bescherm dit focusblok bij herplanning"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_priority.py:0
+msgid "Provide the order as a list."
+msgstr "Geef de volgorde als lijst."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Reason"
+msgstr "Reden"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.model.fields,field_description:daadit_my_day.field_daadit_my_day_work_blocking__daadit_day_block_reason
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_ticket__daadit_day_block_reason
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_block_reason
+msgid "Reason for blocking"
+msgstr "Blokkeerreden"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Reason for correction"
+msgstr "Reden van correctie"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_daadit_my_day_work_blocking__daadit_day_estimate_minutes
+#: model:ir.model.fields,field_description:daadit_my_day.field_helpdesk_ticket__daadit_day_estimate_minutes
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_estimate_minutes
+msgid "Remaining estimate in minutes"
+msgstr "Resterende schatting in minuten"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Remaining minutes"
+msgstr "Resterende minuten"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Remove"
+msgstr "Verwijderen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+msgid "Removed"
+msgstr "Vervalt"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+msgid "Removed ("
+msgstr "Vervalt ("
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Removed from your day."
+msgstr "Uit je dag gehaald."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Reschedule"
+msgstr "Opnieuw plannen"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "Rescheduled within available working hours"
+msgstr "Opnieuw ingedeeld in de vrije roostertijd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Reserved:"
+msgstr "Vrijgepland:"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Returns on"
+msgstr "Komt terug op"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Returns to your schedule on"
+msgstr "Komt terug in je planning op"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Running for more than two hours. Check whether the timer should still be running."
+msgstr "Al langer dan twee uur. Controleer of de timer nog moet lopen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Save"
+msgstr "Opslaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Save and view schedule"
+msgstr "Opslaan en planning bekijken"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Save correction"
+msgstr "Correctie opslaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Save estimate"
+msgstr "Schatting opslaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Save follow-up"
+msgstr "Opvolging opslaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Save shared scheduling"
+msgstr "Taakverdeling opslaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Schedule now"
+msgstr "Plan nu in"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Schedule outside working hours"
+msgstr "Buiten werktijd plannen"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_project_task__daadit_day_parallel
+msgid "Schedule together in My Day"
+msgstr "Samen inplannen in Mijn Dag"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "Schedule updated."
+msgstr "Planning bijgewerkt."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__planning_slot__daadit_day_state__planned
+msgid "Scheduled"
+msgstr "Gepland"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Scheduled for %s."
+msgstr "Ingepland op %s."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "Scheduled in available working hours"
+msgstr "In vrije roostertijd ingepland"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_outside_hours
+msgid "Scheduled outside working hours"
+msgstr "Bewust buiten werktijd gepland"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Scheduled outside working hours."
+msgstr "Buiten werktijd gepland."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Scheduled within the next two weeks"
+msgstr "Gepland in de komende twee weken"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Scheduling owner"
+msgstr "Verantwoordelijke voor planning"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Shared scheduling"
+msgstr "Taakverdeling"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/shared_work.py:0
+msgid "Shared scheduling saved."
+msgstr "Taakverdeling opgeslagen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Shared tasks scheduled by colleagues"
+msgstr "Gedeelde taken bij collega’s"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Show"
+msgstr "Tonen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Something went wrong."
+msgstr "Er ging iets mis."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Start timer"
+msgstr "Klok starten"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_review.py:0
+msgid "Stop the timer before correcting time worked."
+msgstr "Stop de timer voordat je gewerkte tijd corrigeert."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Suggestion:"
+msgstr "Voorstel:"
+
+#. module: daadit_my_day
+#. odoo-python
+#. odoo-javascript
+#: code:addons/daadit_my_day/models/day_review.py:0
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_task_id
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__planning_slot__daadit_day_kind__task
+msgid "Task"
+msgstr "Taak"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+#: code:addons/daadit_my_day/models/work_followup.py:0
+msgid "Task %d · %s"
+msgstr "Taak %d · %s"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Task marked as done."
+msgstr "Taak staat op klaar."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Tasks ("
+msgstr "Taken ("
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "That duration does not fit here. Pause or move the block first."
+msgstr "Die duur past niet op deze plek. Pauzeer of verplaats het blok eerst."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+msgid "The default order has been restored."
+msgstr "De standaardvolgorde geldt weer."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "The linked work has changed since then."
+msgstr "Het gekoppelde werk is intussen gewijzigd."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_priority.py:0
+msgid "The order contains an unknown work item."
+msgstr "Onbekend werk in de volgorde."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "The previous schedule was restored."
+msgstr "De vorige planning is hersteld."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "The scheduled blocks have changed since then."
+msgstr "De geplande blokken zijn intussen gewijzigd."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "The scheduled times stay the same."
+msgstr "De geplande tijden blijven gelijk."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "The timer stopped. Check your time and resume when you continue working."
+msgstr "De klok is gestopt. Controleer je tijd en hervat wanneer je verder werkt."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "There is no linked record to close for personal work."
+msgstr "Eigen werk heeft niets om af te sluiten."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "There is no open work assigned to you."
+msgstr "Er staat geen open werk op je naam."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "There is no rescheduling to undo."
+msgstr "Er is geen herplanning beschikbaar om terug te draaien."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "There is no suitable time in the next %s days."
+msgstr "Geen passend vrij blok in de komende %s dagen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "There is no suitable time outside working hours today."
+msgstr "Er is vandaag geen passend blok buiten werktijd."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "There is no time estimate yet. My Day uses the default duration."
+msgstr "Er is nog geen urenschatting. Mijn Dag gebruikt de standaardduur."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "This activity is no longer open and assigned to you."
+msgstr "Deze activiteit staat niet meer open bij jou."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/shared_work.py:0
+msgid "This block does not belong to this task."
+msgstr "Dit blok hoort niet bij deze taak."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "This block is no longer in your schedule."
+msgstr "Dit blok staat niet meer in jouw dag."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_review.py:0
+msgid "This block is no longer open on this day."
+msgstr "Dit blok is niet meer open op deze dag."
+
+#. module: daadit_my_day
+#: model:ir.model.fields,help:daadit_my_day.field_planning_slot__daadit_day_pinned
+msgid "This block stays in place when the day is rescheduled."
+msgstr "Dit blok blijft staan als de dag opnieuw wordt ingepland."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "This block will be scheduled outside your working hours on this day and will stay there when you reschedule."
+msgstr "Dit blok wordt op deze dag buiten je rooster gezet en blijft daar bij herplannen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "This day is reserved for work other than helpdesk."
+msgstr "Deze dag is vrijgepland voor helpdesk."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "This helpdesk team has no closed stage."
+msgstr "Dit helpdeskteam heeft geen gesloten fase."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/shared_work.py:0
+msgid "This task does not have a shared schedule."
+msgstr "Deze taak heeft geen gedeelde planning."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_review.py:0
+msgid "This timesheet entry is validated, invoiced or read-only."
+msgstr "Deze urenregel is al gevalideerd, gefactureerd of alleen-lezen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "This work is no longer on your waiting list."
+msgstr "Dit staat niet meer op je wachtlijst."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "This work is not assigned to you."
+msgstr "Dit werk is niet aan jou toegewezen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "This work no longer exists."
+msgstr "Dit werk bestaat niet meer."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Through"
+msgstr "Tot en met"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Ticket moved to %s."
+msgstr "Ticket staat op %s."
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_time_history
+msgid "Time corrections"
+msgstr "Correcties gewerkte tijd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "Time estimate"
+msgstr "Urenschatting"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_estimate.py:0
+msgid "Time estimate saved."
+msgstr "Urenschatting opgeslagen."
+
+#. module: daadit_my_day
+#: model:ir.model.constraint,message:daadit_my_day.constraint_helpdesk_team_daadit_day_ticket_minutes_range
+msgid "Time per ticket must be between 0 and 480 minutes."
+msgstr "De tijd per ticket ligt tussen 0 en 480 minuten."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Time worked before blocking"
+msgstr "Gewerkte tijd vóór blokkade"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "Time worked before handover or completion"
+msgstr "Gewerkte tijd vóór overdracht of afronding"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+#: code:addons/daadit_my_day/models/shared_work.py:0
+msgid "Time worked before task handover"
+msgstr "Gewerkte tijd vóór taakoverdracht"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Timer running"
+msgstr "De klok loopt"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_timer_started_at
+msgid "Timer started at"
+msgstr "Klok loopt sinds"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_timesheet_id
+msgid "Timesheet entry"
+msgstr "Urenregel"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Timesheets are disabled for this block"
+msgstr "Uren staan uit voor dit blok"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.ui.menu,name:daadit_my_day.menu_my_day_today
+msgid "Today"
+msgstr "Vandaag"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Typical estimate:"
+msgstr "Typisch geschat:"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Unblock"
+msgstr "Vrijgeven"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Undo rescheduling"
+msgstr "Herplanning ongedaan maken"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Unscheduled work"
+msgstr "Past niet meer of wacht nog"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Urgent · always first"
+msgstr "Urgent · gaat altijd voor"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Use suggestion"
+msgstr "Gebruik voorstel"
+
+#. module: daadit_my_day
+#. odoo-python
+#. odoo-javascript
+#: code:addons/daadit_my_day/models/work_followup.py:0
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__daadit_my_day_work_blocking__daadit_day_block_kind__customer
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__helpdesk_ticket__daadit_day_block_kind__customer
+#: model:ir.model.fields.selection,name:daadit_my_day.selection__project_task__daadit_day_block_kind__customer
+msgid "Waiting for customer"
+msgstr "Wacht op klant"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Waiting for your review"
+msgstr "Wacht op jouw beoordeling"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Weekly schedule"
+msgstr "Weekplanning"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "What will you work on?"
+msgstr "Wat ga je doen?"
+
+#. module: daadit_my_day
+#: model:ir.model.fields,field_description:daadit_my_day.field_planning_slot__daadit_day_reason
+msgid "Why today"
+msgstr "Waarom vandaag"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Will be logged"
+msgstr "Wordt geschreven"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Work"
+msgstr "Werk"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Work type"
+msgstr "Soort werk"
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "Work unblocked."
+msgstr "Werk weer vrijgegeven."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "Worked"
+msgstr "Gewerkt"
+
+#. module: daadit_my_day
+#: model:ir.ui.menu,name:daadit_my_day.menu_my_day_wrap_up
+msgid "Wrap-up"
+msgstr "Afronding"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "You are off according to your working schedule."
+msgstr "Volgens je rooster werk je deze dag niet."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "You are viewing part of the list. Dragging changes the order in the full list."
+msgstr "Je ziet een deel van de lijst. Slepen verandert de volgorde binnen de hele lijst."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "You can only change open work in My Day."
+msgstr "Alleen open werk kan in Mijn Dag worden aangepast."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "You cannot reschedule a day in the past."
+msgstr "Een dag in het verleden kun je niet opnieuw inplannen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "You cannot schedule a day in the past."
+msgstr "Een dag in het verleden kun je niet meer inplannen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "You cannot schedule work in the past."
+msgstr "Je kunt geen werk in het verleden plannen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_priority.py:0
+msgid "You do not have access to all of this work."
+msgstr "Je hebt geen toegang tot al dit werk."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/day_review.py:0
+msgid "You do not have access to this employee’s schedule."
+msgstr "Je hebt geen toegang tot de planning van deze medewerker."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "You have pinned, started or protected these focus blocks. They stay in place."
+msgstr "Deze blokken heb je zelf vastgezet, al gestart of als focus beschermd. Ze blijven op hun plek."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_activity.py:0
+msgid "You no longer have access to the linked record."
+msgstr "Je hebt geen toegang meer tot het gekoppelde document."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/replan.py:0
+msgid "Your schedule has changed. Review the new proposal."
+msgstr "Je planning is gewijzigd. Bekijk het nieuwe voorstel."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+msgid "Your work order was saved."
+msgstr "Je volgorde is opgeslagen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "block(s) are outside your available hours."
+msgstr "blok(ken) staan buiten je beschikbare tijd."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "block(s) outside your available hours"
+msgstr "blok(ken) buiten je beschikbare tijd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "by"
+msgstr "vóór"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "change(s). Dotted blocks show the previous schedule."
+msgstr "wijziging(en). Gestippeld is de oude plek."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "completed items with validated hours in this project. Typical actual time:"
+msgstr "afgeronde items met gevalideerde uren in dit project. Typisch gewerkt:"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "logged"
+msgstr "geregistreerd"
+
+#. module: daadit_my_day
+#: model_terms:ir.ui.view,arch_db:daadit_my_day.helpdesk_team_view_form_my_day
+msgid "minutes per ticket"
+msgstr "minuten per ticket"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_gantt.xml:0
+msgid "no helpdesk"
+msgstr "geen helpdesk"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_action.js:0
+msgid "off"
+msgstr "vrij"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "open block(s) from earlier days are waiting for a suitable time."
+msgstr "open blok(ken) uit eerdere dagen wachten op een passende plek."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_gantt.js:0
+msgid "previously %s"
+msgstr "was %s"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "remaining. Based on"
+msgstr "resterend. Gebaseerd op"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "without an expected timesheet entry ·"
+msgstr "zonder verwachte urenregel ·"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "worked ·"
+msgstr "gewerkt ·"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "· Done"
+msgstr "· Klaar"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "· Scheduled for"
+msgstr "· Gepland op"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "· Scheduled outside working hours"
+msgstr "· Bewust buiten werktijd"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "· Timer running"
+msgstr "· Timer loopt"
+
+#. module: daadit_my_day
+#: model:ir.module.module,summary:base.module_daadit_my_day
+msgid "Work from one timeline for appointments, tickets, tasks and personal work."
+msgstr "Eén app waarin je de hele dag gevoed wordt en werkt: agenda, tickets, taken en eigen werk op één tijdlijn"
+
+#. module: daadit_my_day
+#: model:ir.module.module,description:base.module_daadit_my_day
+msgid "\nMy Day\n======\nOpen My Day to see what you are working on, in what order and why.\nThe schedule sits on the left and the current ticket or task is on the\nright. Use \"Done and next\" to move on to the next item.\n\nWork blocks are Planning shifts linked to a ticket or task. Working hours,\ntime off and appointments determine availability. A shift with the\n\"No helpdesk\" role keeps the day free of tickets.\n"
+msgstr "\nMijn Dag\n========\nDe medewerker staat centraal: open één app en zie wat je vandaag doet, in\nwelke volgorde en waarom. Links staat de dag, rechts het formulier van het\nticket of de taak waar je nu aan werkt. Met \"Klaar en volgende\" staat het\nvolgende werk meteen voor je.\n\nDe blokken zijn gewone Planning-diensten met een koppeling naar het ticket of\nde taak. Werkrooster, verlof en afspraken bepalen hoeveel tijd er is. Een\ndienst met een rol die \"Geen helpdesk\" heeft, houdt de dag vrij van tickets.\n"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+#: model_terms:ir.ui.view,arch_db:daadit_my_day.view_my_day_working_hours
+msgid "Working Hours"
+msgstr "Werktijden"
+
+#. module: daadit_my_day
+#: model_terms:ir.ui.view,arch_db:daadit_my_day.view_my_day_working_hours
+msgid "Choose your working schedule. Changes to a shared schedule affect everyone who uses it."
+msgstr "Kies je werkrooster. Wijzigingen aan een gedeeld rooster gelden voor iedereen die het gebruikt."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/my_day.py:0
+msgid "You need access to your employee record to edit working hours."
+msgstr "Je hebt toegang tot je medewerkersfiche nodig om je werktijden te wijzigen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "There are no open work blocks for this day."
+msgstr "Er staan geen werkblokken meer open voor deze dag."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "There are no working hours scheduled for this day."
+msgstr "Voor deze dag staan geen werktijden in je rooster."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "No work is planned in your remaining working hours."
+msgstr "Er is geen werk gepland in je resterende werktijd."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_action.xml:0
+msgid "There is no free time left in your working schedule."
+msgstr "Er is geen vrije tijd meer in je werkrooster."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Drag work into the order it should be scheduled. Urgent tickets always come first."
+msgstr "Sleep werk in de gewenste volgorde. Urgente tickets gaan altijd voor."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "My priorities"
+msgstr "Mijn prioriteiten"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "All employees and unassigned"
+msgstr "Alle medewerkers en niet toegewezen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Choose an employee to change their scheduling order."
+msgstr "Kies een medewerker om diens planningsvolgorde te wijzigen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Open item"
+msgstr "Item openen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Unassigned"
+msgstr "Niet toegewezen"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Assign to employee"
+msgstr "Toewijzen aan medewerker"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Assign to…"
+msgstr "Toewijzen aan…"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "Save order"
+msgstr "Volgorde opslaan"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "No open work matches these filters."
+msgstr "Er is geen open werk dat aan deze filters voldoet."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+msgid "Assignment saved."
+msgstr "Toewijzing opgeslagen."
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+msgid "The work order was saved."
+msgstr "De werkvolgorde is opgeslagen."
+
+#. module: daadit_my_day
+#. odoo-python
+#: code:addons/daadit_my_day/models/work_priority.py:0
+msgid "Choose an active employee."
+msgstr "Kies een actieve medewerker."

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="daadit_my_day_core.Workspace">
+        <main class="overflow-auto p-3 p-md-4 h-100">
+            <div class="d-flex align-items-end gap-3 flex-wrap mb-4">
+                <h1 class="h3 mb-0 me-auto">My Day</h1>
+                <label class="form-label mb-0">
+                    Employee
+                    <select class="form-select" t-att-disabled="state.busy or state.dirty"
+                            t-on-change="changeScope">
+                        <option value="mine">My priorities</option>
+                        <option value="all">All employees and unassigned</option>
+                        <option t-foreach="state.employees.filter((user) => user.id !== state.userId)"
+                                t-as="employee" t-key="employee.id"
+                                t-att-value="employee.id" t-esc="employee.name"/>
+                    </select>
+                </label>
+                <button t-if="state.scope === 'mine'" type="button" class="btn btn-primary"
+                        t-att-disabled="state.busy or !state.dirty" t-on-click="save">Save order</button>
+            </div>
+            <div class="row g-4">
+                <section class="col">
+                    <h2 class="h5">Open work</h2>
+                    <ol class="list-group list-group-flush" t-ref="items">
+                        <li t-foreach="state.items" t-as="item" t-key="item.key" t-att-data-key="item.key"
+                            t-att-class="'list-group-item d-flex align-items-center gap-3 flex-wrap ' +
+                                (state.scope === 'mine' and !item.urgent ? 'o_my_day_core_sortable' : '')">
+                            <span t-if="state.scope === 'mine' and !item.urgent"
+                                  class="o_my_day_core_handle" style="cursor: grab;" title="Drag to move">
+                                <i class="fa fa-bars" aria-hidden="true"/>
+                            </span>
+                            <div class="flex-grow-1">
+                                <span class="badge text-bg-secondary me-1" t-esc="sourceLabel(item.kind)"/>
+                                <span t-if="item.urgent" class="badge text-bg-danger me-1">Urgent</span>
+                                <button type="button" class="btn btn-link p-0 text-start"
+                                        t-on-click="() => this.open(item.open_model, item.open_id, item.open_view)"
+                                        t-esc="item.title"/>
+                                <small t-if="item.due" class="text-muted d-block" t-esc="item.due"/>
+                            </div>
+                            <span class="d-flex gap-1 flex-wrap">
+                                <span t-foreach="item.assignees" t-as="person" t-key="person.id"
+                                      class="badge text-bg-light" t-esc="person.name"/>
+                                <span t-if="!item.assignees.length" class="badge text-bg-light">Unassigned</span>
+                            </span>
+                            <select t-if="item.can_assign and state.employees.length"
+                                    class="form-select form-select-sm w-auto" aria-label="Assign to employee"
+                                    t-att-disabled="state.busy or state.dirty" t-on-change="(ev) => this.assign(item, ev)">
+                                <option value="">Assign to…</option>
+                                <option t-foreach="state.employees" t-as="person" t-key="person.id"
+                                        t-att-value="person.id" t-esc="person.name"/>
+                            </select>
+                        </li>
+                    </ol>
+                    <p t-if="!state.busy and !state.items.length" class="text-muted">No open work.</p>
+                </section>
+                <section t-if="state.appointments.length" class="col-12 col-lg-4">
+                    <h2 class="h5">Upcoming appointments</h2>
+                    <ul class="list-group list-group-flush">
+                        <li t-foreach="state.appointments" t-as="event" t-key="event.id" class="list-group-item">
+                            <button type="button" class="btn btn-link p-0 text-start"
+                                    t-on-click="() => this.open('calendar.event', event.id)" t-esc="event.title"/>
+                            <small class="text-muted d-block" t-esc="formatStart(event.start)"/>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </t>
+</templates>

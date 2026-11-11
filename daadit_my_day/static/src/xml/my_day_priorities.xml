@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="daadit_my_day.Priorities">
+        <section class="o_my_day_prio">
+            <div class="o_my_day_prio_head">
+                <div>
+                    <h2 class="h4 mb-1">Priorities</h2>
+                    <p class="text-muted mb-0">
+                        Drag work into the order it should be scheduled. Urgent tickets always come first.
+                    </p>
+                </div>
+                <div class="o_my_day_prio_actions">
+                    <button type="button" class="btn btn-secondary" t-on-click="props.onClose">Back to My Day</button>
+                    <button t-if="state.hasCustom" type="button" class="btn btn-secondary" t-att-disabled="state.busy"
+                            t-on-click="reset">Default order</button>
+                    <button t-if="state.scope !== 'all'" type="button" class="btn btn-primary"
+                            t-att-disabled="state.busy or !state.dirty"
+                            t-on-click="save">
+                        <i class="fa fa-check me-1"/><t t-if="state.scope === 'mine'">Save and view schedule</t>
+                        <t t-else="">Save order</t>
+                    </button>
+                </div>
+            </div>
+
+            <label class="form-label d-flex align-items-center gap-2 my-3">
+                <span>Employee</span>
+                <select class="form-select w-auto" t-att-value="state.scope"
+                        t-att-disabled="state.busy or state.dirty" t-on-change="changeScope">
+                    <option value="mine">My priorities</option>
+                    <option value="all">All employees and unassigned</option>
+                    <option t-foreach="state.employees" t-as="employee" t-key="employee.id"
+                            t-att-value="employee.id" t-esc="employee.name"/>
+                </select>
+            </label>
+            <p t-if="state.scope === 'all'" class="small text-muted">
+                Choose an employee to change their scheduling order.
+            </p>
+
+            <div class="o_my_day_prio_filters btn-group" role="group" aria-label="Work type">
+                <button type="button" t-att-class="'btn btn-sm ' + (state.filter === 'all' ? 'btn-primary' : 'btn-light')"
+                        t-on-click="() => this.setFilter('all')">All (<t t-esc="counts.all"/>)</button>
+                <button type="button" t-att-class="'btn btn-sm ' + (state.filter === 'ticket' ? 'btn-primary' : 'btn-light')"
+                        t-on-click="() => this.setFilter('ticket')">Helpdesk (<t t-esc="counts.ticket"/>)</button>
+                <button type="button" t-att-class="'btn btn-sm ' + (state.filter === 'task' ? 'btn-primary' : 'btn-light')"
+                        t-on-click="() => this.setFilter('task')">Tasks (<t t-esc="counts.task"/>)</button>
+                <button type="button" t-att-class="'btn btn-sm ' + (state.filter === 'activity' ? 'btn-primary' : 'btn-light')"
+                        t-on-click="() => this.setFilter('activity')">Activities (<t t-esc="counts.activity"/>)</button>
+            </div>
+            <p t-if="state.filter !== 'all'" class="small text-muted mt-2 mb-0">
+                You are viewing part of the list. Dragging changes the order in the full list.
+            </p>
+
+            <div t-if="state.busy and !state.items.length" class="o_my_day_center">Loading your work…</div>
+            <ol class="o_my_day_prio_list" t-ref="list">
+                <li t-foreach="visibleItems" t-as="item" t-key="item.key"
+                    t-att-data-key="item.key"
+                    t-att-class="'o_my_day_prio_item kind_' + item.kind + (item.urgent ? ' urgent' : '') + (item.can_reorder ? ' is-sortable' : '')">
+                    <span t-if="item.can_reorder" class="o_my_day_prio_handle" title="Drag to move"><i class="fa fa-bars"/></span>
+                    <span class="o_my_day_prio_rank" t-esc="state.items.indexOf(item) + 1"/>
+                    <span class="o_my_day_body">
+                        <span class="d-flex align-items-center gap-2 flex-wrap">
+                            <span class="o_my_day_kind" t-esc="kindLabel(item.kind)"/>
+                            <span t-if="item.urgent" class="badge text-bg-danger">Urgent · always first</span>
+                            <span t-elif="item.manual" class="badge text-bg-light">Custom order</span>
+                            <span t-else="" class="badge text-bg-light text-muted">Default rule</span>
+                        </span>
+                        <button type="button" class="btn btn-link p-0 text-start o_my_day_title"
+                                title="Open item" t-on-click="() => this.openItem(item)" t-esc="item.title"/>
+                        <span class="d-flex gap-1 flex-wrap">
+                            <span t-foreach="item.assignees" t-as="assignee" t-key="assignee.id"
+                                  class="badge text-bg-secondary" t-esc="assignee.name"/>
+                            <span t-if="!item.assignees.length" class="badge text-bg-light">Unassigned</span>
+                        </span>
+                        <span t-if="item.subtitle" class="o_my_day_sub" t-esc="item.subtitle"/>
+                        <span t-if="item.reason" class="o_my_day_reason" t-esc="item.reason"/>
+                    </span>
+                    <select t-if="item.can_assign" class="form-select form-select-sm w-auto"
+                            aria-label="Assign to employee" t-att-disabled="state.busy or state.dirty"
+                            t-on-change="(ev) => this.assign(item, ev)">
+                        <option value="" selected="selected">Assign to…</option>
+                        <option t-foreach="state.employees" t-as="employee" t-key="employee.id"
+                                t-att-value="employee.id" t-esc="employee.name"/>
+                    </select>
+                    <span class="o_my_day_prio_minutes" t-esc="formatMinutes(item.minutes)"/>
+                    <span t-if="item.can_reorder" class="o_my_day_prio_steps">
+                        <button type="button" class="btn btn-link btn-sm" title="Move to top" t-on-click="() => this.toTop(item)">
+                            <i class="fa fa-angle-double-up"/>
+                        </button>
+                        <button type="button" class="btn btn-link btn-sm" title="Move up" t-on-click="() => this.step(item, -1)">
+                            <i class="fa fa-angle-up"/>
+                        </button>
+                        <button type="button" class="btn btn-link btn-sm" title="Move down" t-on-click="() => this.step(item, 1)">
+                            <i class="fa fa-angle-down"/>
+                        </button>
+                    </span>
+                </li>
+            </ol>
+            <p t-if="!state.busy and !visibleItems.length" class="o_my_day_empty">No open work matches these filters.</p>
+
+            <div t-if="state.fixed.length" class="o_my_day_prio_fixed">
+                <h3 class="h6">Already fixed in the schedule</h3>
+                <p class="small text-muted">You have pinned, started or protected these focus blocks. They stay in place.</p>
+                <ul class="list-unstyled mb-0">
+                    <li t-foreach="state.fixed" t-as="item" t-key="item.key + '-' + item_index"
+                        t-att-class="'o_my_day_block kind_' + item.kind">
+                        <span class="o_my_day_body">
+                            <button type="button" class="btn btn-link p-0 text-start o_my_day_title"
+                                    title="Open item" t-on-click="() => this.openItem(item)" t-esc="item.title"/>
+                            <span class="o_my_day_sub" t-esc="item.subtitle"/>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </t>
+
+</templates>

@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+#: model:ir.actions.client,name:daadit_my_day_core.action_my_day
+#: model:ir.ui.menu,name:daadit_my_day_core.menu_my_day
+msgid "My Day"
+msgstr "Mijn Dag"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Employee"
+msgstr "Medewerker"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "My priorities"
+msgstr "Mijn prioriteiten"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "All employees and unassigned"
+msgstr "Alle medewerkers en niet toegewezen"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Save order"
+msgstr "Volgorde opslaan"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Open work"
+msgstr "Openstaand werk"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Drag to move"
+msgstr "Sleep om te verplaatsen"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Urgent"
+msgstr "Urgent"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Unassigned"
+msgstr "Niet toegewezen"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Assign to employee"
+msgstr "Toewijzen aan medewerker"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Assign to…"
+msgstr "Toewijzen aan…"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "No open work."
+msgstr "Geen openstaand werk."
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.xml:0
+msgid "Upcoming appointments"
+msgstr "Aankomende afspraken"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.js:0
+msgid "To-do"
+msgstr "To-do"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.js:0
+msgid "Task"
+msgstr "Taak"
+
+#. module: daadit_my_day_core
+#. odoo-javascript
+#: code:addons/daadit_my_day_core/static/src/my_day.js:0
+msgid "Activity"
+msgstr "Activiteit"
+
+#. module: daadit_my_day_core
+#. odoo-python
+#: code:addons/daadit_my_day_core/models.py:0
+msgid "My Day is available to internal users."
+msgstr "Mijn Dag is beschikbaar voor interne gebruikers."
+
+#. module: daadit_my_day_core
+#. odoo-python
+#: code:addons/daadit_my_day_core/models.py:0
+msgid "Choose an active employee."
+msgstr "Kies een actieve medewerker."
+
+#. module: daadit_my_day_core
+#. odoo-python
+#: code:addons/daadit_my_day_core/models.py:0
+msgid "Choose work assigned to you."
+msgstr "Kies werk dat aan jou is toegewezen."
+
+#. module: daadit_my_day_core
+#. odoo-python
+#: code:addons/daadit_my_day_core/models.py:0
+msgid "This work is unavailable."
+msgstr "Dit werk is niet beschikbaar."

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="role_no_helpdesk" model="planning.role">
+        <field name="name">Project day / off-site (no helpdesk)</field>
+        <field name="daadit_no_helpdesk" eval="True"/>
+    </record>
+</odoo>

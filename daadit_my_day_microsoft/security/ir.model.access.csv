@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_my_day_mail_import,Microsoft 365-import,model_daadit_my_day_mail_import,base.group_user,1,1,1,1
+access_my_day_mail_line,Microsoft 365-bericht,model_daadit_my_day_mail_line,base.group_user,1,1,1,1
+access_my_day_mail_work,Microsoft 365-werk,model_daadit_my_day_mail_work,base.group_user,1,1,0,0

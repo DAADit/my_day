@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_my_day" model="ir.actions.client">
+        <field name="name">My Day</field>
+        <field name="tag">daadit_my_day_core.workspace</field>
+    </record>
+    <menuitem id="menu_my_day" name="My Day" action="action_my_day"
+              groups="base.group_user" sequence="1"
+              web_icon="daadit_my_day_core,static/description/icon.png"/>
+</odoo>

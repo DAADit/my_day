@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rule_my_day_priority_own" model="ir.rule">
+        <field name="name">My Day: own work order only</field>
+        <field name="model_id" ref="model_daadit_my_day_priority"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

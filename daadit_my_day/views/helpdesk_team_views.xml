@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="helpdesk_team_view_form_my_day" model="ir.ui.view">
+        <field name="name">helpdesk.team.form.my.day</field>
+        <field name="model">helpdesk.team</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_team_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='sla']" position="after">
+                <setting id="daadit_my_day_ticket_minutes"
+                         string="My Day: time per ticket"
+                         help="Zoveel minuten reserveert Mijn Dag voor een ticket van dit team. Stem dit af op de SLA. Leeg gebruikt de algemene standaard.">
+                    <div class="mt8">
+                        <field name="daadit_day_ticket_minutes" class="oe_inline text-center"/>
+                        <span class="ms-2">minutes per ticket</span>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

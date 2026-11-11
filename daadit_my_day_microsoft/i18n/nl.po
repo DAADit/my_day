@@ -1,0 +1,244 @@
+# Dutch translations for My Day.
+msgid ""
+msgstr ""
+"Project-Id-Version: daadit_my_day_microsoft 19.0\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: DAADit\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "(No subject)"
+msgstr "(Geen onderwerp)"
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Add to My Day"
+msgstr "Toevoegen aan Mijn Dag"
+
+#. module: daadit_my_day_microsoft
+#: model:ir.model,name:daadit_my_day_microsoft.model_daadit_my_day_mail_import
+msgid "Choose a Microsoft 365 message"
+msgstr "Microsoft 365-bericht kiezen"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "Choose a message from your own inbox."
+msgstr "Kies een bericht uit je eigen inbox."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "Choose one ticket or one task."
+msgstr "Kies één ticket of één taak."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Choose the Microsoft account that matches your Odoo email address."
+msgstr "Kies het Microsoft-account dat bij je Odoo-e-mailadres hoort."
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Connect Microsoft 365"
+msgstr "Microsoft 365 koppelen"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Connect your own Microsoft 365 account first."
+msgstr "Koppel eerst je eigen Microsoft 365-account."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "Follow up on Microsoft 365 message"
+msgstr "Microsoft 365-bericht opvolgen"
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Load inbox"
+msgstr "Inbox ophalen"
+
+#. module: daadit_my_day_microsoft
+#: model:ir.model.fields,field_description:daadit_my_day_microsoft.field_daadit_my_day_mail_import__message_id
+msgid "Message"
+msgstr "Bericht"
+
+#. module: daadit_my_day_microsoft
+#: model:ir.model,name:daadit_my_day_microsoft.model_daadit_my_day_mail_line
+msgid "Message in the Microsoft 365 inbox"
+msgstr "Bericht in Microsoft 365-inbox"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Microsoft 365 denied access. Check your account connection."
+msgstr "Microsoft 365 gaf geen toegang. Controleer de accountkoppeling."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Microsoft 365 did not grant the required permissions."
+msgstr "Microsoft 365 heeft de benodigde toestemming niet gegeven."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "Microsoft 365 did not provide the text of this message."
+msgstr "Microsoft 365 heeft de tekst van dit bericht niet geleverd."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Microsoft 365 is busy. Try again later."
+msgstr "Microsoft 365 is tijdelijk bezet. Probeer het later opnieuw."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Microsoft 365 is not enabled for your Odoo account."
+msgstr "Microsoft 365 is voor jouw Odoo-account niet ingeschakeld."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Microsoft 365 is temporarily unavailable."
+msgstr "Microsoft 365 is tijdelijk niet beschikbaar."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+#: model:ir.actions.act_window,name:daadit_my_day_microsoft.action_import_mail
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Microsoft 365 mail"
+msgstr "Microsoft 365-mail"
+
+#. module: daadit_my_day_microsoft
+#: model:ir.model,name:daadit_my_day_microsoft.model_daadit_my_day_graph
+msgid "Microsoft 365 mail for My Day"
+msgstr "Microsoft 365-mail voor Mijn Dag"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/controllers/oauth.py:0
+msgid "Microsoft 365 was not connected. Start the connection again."
+msgstr "Microsoft 365 is niet gekoppeld. Start de koppeling opnieuw."
+
+#. module: daadit_my_day_microsoft
+#: model:ir.ui.menu,name:daadit_my_day_microsoft.menu_schedule
+msgid "My Day"
+msgstr "Mijn Dag"
+
+#. module: daadit_my_day_microsoft
+#: model:ir.rule,name:daadit_my_day_microsoft.rule_own_mail_work
+msgid "Own Microsoft 365 messages"
+msgstr "Eigen Microsoft 365-berichten"
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Preview"
+msgstr "Voorbeeld"
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_work_form
+msgid "Private reply draft"
+msgstr "Eigen antwoordconcept"
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Received"
+msgstr "Ontvangen"
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_work_form
+msgid "Received message"
+msgstr "Ontvangen bericht"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "Reconnect your Microsoft 365 account."
+msgstr "Koppel je Microsoft 365-account opnieuw."
+
+#. module: daadit_my_day_microsoft
+#: model:ir.model,name:daadit_my_day_microsoft.model_daadit_my_day_mail_work
+msgid "Selected Microsoft 365 mail"
+msgstr "Geselecteerde Microsoft 365-mail"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+#: model:ir.actions.act_window,name:daadit_my_day_microsoft.action_selected_mail
+#: model:ir.ui.menu,name:daadit_my_day_microsoft.menu_selected_mail
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_work_form
+msgid "Selected mail"
+msgstr "Geselecteerde mail"
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Sender"
+msgstr "Afzender"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "Sign in as an internal employee."
+msgstr "Meld je aan als interne medewerker."
+
+#. module: daadit_my_day_microsoft
+#: model_terms:ir.ui.view,arch_db:daadit_my_day_microsoft.view_my_day_mail_import
+msgid "Subject"
+msgstr "Onderwerp"
+
+#. module: daadit_my_day_microsoft
+#: model:ir.model.fields,field_description:daadit_my_day_microsoft.field_daadit_my_day_mail_import__task_id
+msgid "Task"
+msgstr "Taak"
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/graph.py:0
+msgid "The Microsoft 365 app registration is not configured yet."
+msgstr "De Microsoft 365-appregistratie is nog niet ingesteld."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "The selected message has changed. Reload your inbox."
+msgstr "Het geselecteerde bericht is gewijzigd. Haal je inbox opnieuw op."
+
+#. module: daadit_my_day_microsoft
+#: model:ir.model.constraint,message:daadit_my_day_microsoft.constraint_daadit_my_day_mail_work_unique_conversation
+msgid "This conversation has already been added as work."
+msgstr "Dit gesprek is al als werk toegevoegd."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "This conversation was just added. Open Selected mail."
+msgstr "Dit gesprek is net toegevoegd. Open Geselecteerde mail."
+
+#. module: daadit_my_day_microsoft
+#. odoo-python
+#: code:addons/daadit_my_day_microsoft/models/mail_import.py:0
+msgid "You can only edit your own reply draft."
+msgstr "Alleen het eigen antwoordconcept kan worden gewijzigd."
+
+#. module: daadit_my_day_microsoft
+#: model:ir.module.module,shortdesc:base.module_daadit_my_day_microsoft
+msgid "My Day — Microsoft 365"
+msgstr "Mijn Dag — Microsoft 365"
+
+#. module: daadit_my_day_microsoft
+#: model:ir.module.module,summary:base.module_daadit_my_day_microsoft
+msgid "Select Microsoft 365 messages as work in My Day."
+msgstr "Selecteer Microsoft 365-berichten als werk in Mijn Dag"

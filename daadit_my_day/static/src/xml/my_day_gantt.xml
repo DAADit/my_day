@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="daadit_my_day.Gantt">
+        <div class="o_my_day_gantt" t-att-style="gridStyle">
+            <div class="o_gantt_head">
+                <div class="o_gantt_label"/>
+                <div class="o_gantt_scale">
+                    <span t-foreach="hours" t-as="hour" t-key="hour.minute"
+                          t-att-style="'left: ' + left(hour.minute) + '%'" t-esc="hour.label"/>
+                </div>
+            </div>
+            <div t-foreach="props.rows" t-as="row" t-key="row.date" t-att-class="rowClass(row)">
+                <div class="o_gantt_label">
+                    <b t-esc="row.weekday"/>
+                    <small t-esc="row.label"/>
+                    <small t-if="row.closed" class="o_gantt_closed">no helpdesk</small>
+                </div>
+                <div class="o_gantt_track">
+                    <div t-foreach="row.work" t-as="band" t-key="band_index" class="o_gantt_work"
+                         t-att-style="span(band[0], band[1])"/>
+                    <div t-if="!row.work.length" class="o_gantt_off">Not scheduled to work</div>
+                    <div t-if="row.now !== false" class="o_gantt_now" t-att-style="'left: ' + left(row.now) + '%'"/>
+                    <button t-foreach="row.items" t-as="item" t-key="item.key" type="button"
+                            t-att-class="barClass(item)" t-att-style="span(item.start, item.end)"
+                            t-att-title="barTitle(item)" t-on-click="() => this.onBar(row, item)">
+                        <span class="o_gantt_bar_text">
+                            <i t-if="item.focus" class="fa fa-shield me-1"/>
+                            <i t-if="item.goal" class="fa fa-star me-1"/>
+                            <t t-esc="item.title"/>
+                        </span>
+                        <small t-if="props.compare and item.from" class="o_gantt_from">
+                            <i class="fa fa-long-arrow-right me-1"/>was <t t-esc="item.from"/>
+                        </small>
+                    </button>
+                </div>
+            </div>
+            <div t-if="props.showLegend" class="o_gantt_legend">
+                <span class="kind_ticket"><i/>Helpdesk</span>
+                <span class="kind_task"><i/>Task</span>
+                <span class="kind_activity"><i/>Activity</span>
+                <span class="kind_own"><i/>Personal work</span>
+                <span class="kind_event"><i/>Appointment</span>
+                <t t-if="props.compare">
+                    <span class="o_gantt_key status_new"><i/>New (<t t-esc="countByStatus('new')"/>)</span>
+                    <span class="o_gantt_key status_moved"><i/>Moved (<t t-esc="countByStatus('moved')"/>)</span>
+                    <span class="o_gantt_key ghost"><i/>Previous time</span>
+                    <span class="o_gantt_key status_removed"><i/>Removed (<t t-esc="countByStatus('removed')"/>)</span>
+                </t>
+            </div>
+        </div>
+    </t>
+
+</templates>

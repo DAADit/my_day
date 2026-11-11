@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="daadit_my_day.Record">
+        <View t-props="viewProps"/>
+    </t>
+
+    <t t-name="daadit_my_day.Item">
+        <button type="button" t-att-class="itemClass" t-on-click="() => this.select(item)">
+            <span t-if="showTime" class="o_my_day_time">
+                <t t-esc="item.start"/>
+                <small t-esc="formatMinutes(item.minutes)"/>
+            </span>
+            <span class="o_my_day_body">
+                <span class="o_my_day_kind" t-esc="kindLabel(item.kind)"/>
+                <span class="o_my_day_title" t-esc="item.title"/>
+                <span t-if="item.goal" class="badge text-bg-primary ms-1">Daily goal</span>
+                <span t-if="item.focus" class="badge text-bg-secondary ms-1">Focus</span>
+                <span t-if="item.subtitle" class="o_my_day_sub" t-esc="item.subtitle"/>
+                <span t-if="item.reason" class="o_my_day_reason" t-esc="item.reason"/>
+            </span>
+            <i t-if="item.state === 'done'" class="fa fa-check o_my_day_check" title="Done"/>
+            <i t-if="item.timer_running" class="fa fa-clock-o o_my_day_clock" title="Timer running"/>
+        </button>
+    </t>
+
+    <t t-name="daadit_my_day.Main">
+        <div class="o_my_day" t-att-class="{ detail_open: state.detailOpen, ['layout_' + state.layout]: true }">
+            <div t-if="state.loading" class="o_my_day_center">Preparing your day…</div>
+            <div t-elif="state.error" class="o_my_day_center">
+                <p t-esc="state.error"/>
+            </div>
+            <t t-else="">
+                <header class="o_my_day_head">
+                    <div class="o_my_day_date">
+                        <button type="button" class="btn btn-link" title="Previous day" t-on-click="() => this.shiftDay(-1)">
+                            <i class="fa fa-chevron-left"/>
+                        </button>
+                        <div>
+                            <strong t-esc="day.label"/>
+                            <small t-esc="headerText"/>
+                        </div>
+                        <button type="button" class="btn btn-link" title="Next day" t-on-click="() => this.shiftDay(1)">
+                            <i class="fa fa-chevron-right"/>
+                        </button>
+                        <button t-if="!day.is_today" type="button" class="btn btn-secondary btn-sm" t-on-click="goToday">Today</button>
+                    </div>
+                    <div class="o_my_day_week">
+                        <button t-foreach="day.week" t-as="chip" t-key="chip.date" type="button"
+                                t-att-class="weekClass(chip)" t-on-click="() => this.openDay(chip.date)"
+                                t-att-title="chip.closed ? labels.noHelpdesk : chip.off ? labels.notScheduledToWork : freeTimeLabel(chip.free)">
+                            <span t-esc="chip.label"/>
+                            <b t-esc="chip.number"/>
+                            <small t-esc="chip.off ? labels.off : formatMinutes(chip.free)"/>
+                        </button>
+                    </div>
+                    <div class="o_my_day_actions">
+                        <div class="btn-group o_my_day_layout" role="group" aria-label="Daily schedule view">
+                            <button type="button" t-att-class="'btn btn-light' + (state.layout === 'side' ? ' active' : '')"
+                                    title="Daily schedule as a list on the left" t-on-click="() => this.setLayout('side')">
+                                <i class="fa fa-columns"/>
+                            </button>
+                            <button type="button" t-att-class="'btn btn-light' + (state.layout === 'top' ? ' active' : '')"
+                                    title="Daily schedule as a Gantt chart at the top" t-on-click="() => this.setLayout('top')">
+                                <i class="fa fa-tasks"/>
+                            </button>
+                            <button type="button" t-att-class="'btn btn-light' + (state.layout === 'hidden' ? ' active' : '')"
+                                    title="Hide daily schedule" t-on-click="() => this.setLayout('hidden')">
+                                <i class="fa fa-eye-slash"/>
+                            </button>
+                        </div>
+                        <button t-if="day.can_edit_working_hours" type="button" class="btn btn-secondary"
+                                t-att-disabled="state.busy" t-on-click="openWorkingHours">
+                            <i class="fa fa-clock-o me-1"/>Working Hours
+                        </button>
+                        <button t-if="!day.is_past" type="button" class="btn btn-secondary" t-att-disabled="state.busy" t-on-click="replan">
+                            <i class="fa fa-magic me-1"/>Reschedule
+                        </button>
+                        <button t-if="!day.is_past and day.can_undo_replan" type="button" class="btn btn-secondary"
+                                t-att-disabled="state.busy" t-on-click="undoReplan">Undo rescheduling</button>
+                        <button t-if="!day.is_past" type="button" class="btn btn-primary" t-on-click="toggleAdd">
+                            <i class="fa fa-plus me-1"/>Personal work
+                        </button>
+                    </div>
+                </header>
+
+                <section t-if="state.replanPreview" class="o_my_day_replan" aria-label="Proposed schedule">
+                    <div class="o_my_day_replan_head">
+                        <div>
+                            <h3 class="h5 mb-0">Proposed schedule</h3>
+                            <small class="text-muted" t-if="state.replanPreview.changes.length">
+                                <t t-esc="state.replanPreview.changes.length"/> change(s). Dotted blocks show the previous schedule.
+                            </small>
+                            <small class="text-muted" t-else="">The scheduled times stay the same.</small>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-secondary" t-on-click="cancelReplan">Cancel</button>
+                            <button type="button" class="btn btn-primary" t-att-disabled="state.busy" t-on-click="confirmReplan">
+                                <i class="fa fa-check me-1"/>Apply schedule
+                            </button>
+                        </div>
+                    </div>
+                    <MyDayGantt t-if="state.replanPreview.rows" rows="state.replanPreview.rows"
+                                selectedDate="day.date" showLegend="true" compare="true"/>
+                    <button t-if="state.replanPreview.changes.length" type="button" class="btn btn-link btn-sm px-0"
+                            t-on-click="toggleChanges">
+                        <i t-att-class="state.showChanges ? 'fa fa-caret-down me-1' : 'fa fa-caret-right me-1'"/>List of changes
+                    </button>
+                    <table t-if="state.showChanges and state.replanPreview.changes.length" class="table table-sm">
+                        <thead><tr><th>Block</th><th>Current time</th><th>Proposed time</th><th>Reason</th></tr></thead>
+                        <tbody>
+                            <tr t-foreach="state.replanPreview.changes" t-as="change" t-key="change_index">
+                                <td t-esc="change.title"/>
+                                <td t-esc="change.before || '—'"/>
+                                <td t-esc="change.after || '—'"/>
+                                <td t-esc="change.reason"/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <div t-if="state.activeTimer" class="o_my_day_banner" t-att-class="{ warn: longTimer }">
+                    <span><strong t-esc="state.activeTimer.title"/> · Timer running</span>
+                    <span t-if="longTimer">Running for more than two hours. Check whether the timer should still be running.</span>
+                    <button type="button" class="btn btn-link btn-sm" t-att-disabled="state.busy"
+                            t-on-click="pauseActive">Pause active timer</button>
+                </div>
+
+                <MyDayReview t-if="state.reviewMode" t-key="state.reviewMode + day.date"
+                             mode="state.reviewMode" date="day.date"
+                             onClose="() => this.closeReview()" onChanged="() => this.reviewChanged()"/>
+                <MyDayPriorities t-elif="state.view === 'priorities'"
+                                 onClose="() => this.closePriorities()" onSaved="() => this.prioritiesSaved()"/>
+                <t t-else="">
+                <section t-if="state.layout === 'top' and !state.replanPreview" class="o_my_day_top" aria-label="Weekly schedule">
+                    <MyDayGantt t-if="state.gantt" rows="state.gantt.rows" selectedKey="selected?.key or false"
+                                selectedDate="day.date" onSelect="(row, item) => this.selectFromGantt(row, item)"/>
+                    <div class="o_my_day_top_foot">
+                        <button t-if="state.urgentCount and day.is_today" type="button" class="btn btn-sm btn-outline-danger" t-on-click="pullUrgent">
+                            <i class="fa fa-bolt me-1"/>Urgent: <t t-esc="day.urgent[0]?.title"/>
+                        </button>
+                        <span t-if="day.stats.overflow" class="text-warning-emphasis small">
+                            <i class="fa fa-exclamation-triangle me-1"/><t t-esc="day.stats.overflow"/> block(s) outside your available hours
+                        </span>
+                        <button t-if="!day.is_past or day.is_today" type="button" class="btn btn-sm btn-light ms-auto"
+                                t-on-click="() => this.openReview('day')"><i class="fa fa-flag-checkered me-1"/>Close day</button>
+                    </div>
+                </section>
+                <div t-if="state.layout === 'hidden' and state.urgentCount and day.is_today" class="px-3 pt-2">
+                    <button type="button" class="o_my_day_banner urgent" t-on-click="pullUrgent">
+                        <i class="fa fa-bolt me-2"/>
+                        <span><b>New urgent work: </b><t t-esc="day.urgent[0]?.title"/>. Click to schedule it now.</span>
+                    </button>
+                </div>
+                <div class="o_my_day_main">
+                    <aside t-if="state.layout === 'side'" class="o_my_day_left">
+                        <div t-if="state.showAdd" class="o_my_day_add">
+                            <input type="text" class="form-control" placeholder="What will you work on?"
+                                   t-model="state.ownTitle" t-on-keydown="onOwnKeydown"/>
+                            <select class="form-select" t-model="state.ownMinutes">
+                                <option value="15">15 min</option>
+                                <option value="30">30 min</option>
+                                <option value="60">1 hour</option>
+                                <option value="90">1h 30m</option>
+                                <option value="120">2 hours</option>
+                                <option value="240">4 hours</option>
+                            </select>
+                            <label class="form-check">
+                                <input type="checkbox" class="form-check-input" t-model="state.ownOutsideHours"/>
+                                Schedule outside working hours
+                            </label>
+                            <button type="button" class="btn btn-primary" t-on-click="addOwn">Add</button>
+                        </div>
+
+                        <button t-if="state.urgentCount and day.is_today" type="button" class="o_my_day_banner urgent" t-on-click="pullUrgent">
+                            <i class="fa fa-bolt me-2"/>
+                            <span>
+                                <b>New urgent work: </b>
+                                <t t-esc="day.urgent[0]?.title"/>. Click to schedule it now.
+                            </span>
+                        </button>
+                        <div t-if="day.closed_label" class="o_my_day_banner closed">
+                            <i class="fa fa-lock me-2"/>
+                            <span>Reserved: <b t-esc="day.closed_label"/>. No helpdesk work today.</span>
+                        </div>
+                        <div t-if="day.off_day" class="o_my_day_banner">
+                            <i class="fa fa-moon-o me-2"/><span>You are off according to your working schedule.</span>
+                        </div>
+                        <div t-foreach="day.all_day" t-as="label" t-key="label_index" class="o_my_day_banner">
+                            <i class="fa fa-calendar-o me-2"/><span t-esc="label"/>
+                        </div>
+                        <div t-if="day.stats.overflow" class="o_my_day_banner warn">
+                            <i class="fa fa-exclamation-triangle me-2"/>
+                            <span><b t-esc="day.stats.overflow"/> block(s) are outside your available hours.</span>
+                        </div>
+                        <div t-if="day.stats.unplaced" class="o_my_day_banner warn">
+                            <i class="fa fa-exclamation-triangle me-2"/>
+                            <span><b t-esc="day.stats.unplaced"/> open block(s) from earlier days are waiting for a suitable time.</span>
+                        </div>
+
+                        <div class="o_my_day_legend">
+                            <span class="kind_ticket"><i/>Helpdesk</span>
+                            <span class="kind_task"><i/>Task</span>
+                            <span class="kind_own"><i/>Personal work</span>
+                            <span class="kind_event"><i/>Appointment</span>
+                            <span class="kind_activity"><i/>Activity</span>
+                        </div>
+
+                        <div class="o_my_day_list">
+                            <t t-foreach="day.blocks" t-as="item" t-key="item.key">
+                                <t t-call="daadit_my_day.Item">
+                                    <t t-set="itemClass" t-value="blockClass(item)"/>
+                                    <t t-set="showTime" t-value="true"/>
+                                </t>
+                            </t>
+                            <p t-if="!day.blocks.length" class="o_my_day_empty">
+                                Nothing is scheduled for this day.
+                                <t t-if="!day.is_past and !day.off_day">Click Reschedule.</t>
+                            </p>
+                            <button t-if="day.blocks.length and (day.is_today or day.is_past)" type="button"
+                                    class="btn btn-light w-100 mt-2 o_my_day_close_day" t-on-click="() => this.openReview('day')">
+                                <i class="fa fa-flag-checkered me-1"/>Close day
+                            </button>
+                        </div>
+
+                        <section t-if="day.goals.length" class="p-2" aria-label="Daily goals">
+                            <strong>Daily goals</strong>
+                            <ul class="mb-0">
+                                <li t-foreach="day.goals" t-as="goal" t-key="goal.id">
+                                    <t t-esc="goal.title"/>
+                                    <t t-if="goal.done"> · Done</t>
+                                    <t t-elif="goal.date !== day.date"> · Scheduled for <t t-esc="goal.date"/></t>
+                                </li>
+                            </ul>
+                        </section>
+                        <div t-if="day.blocked_work.length" class="o_my_day_queue">
+                            <button type="button" class="o_my_day_queue_head" t-on-click="toggleBlocked">
+                                <i t-att-class="state.showBlocked ? 'fa fa-caret-down' : 'fa fa-caret-right'"/>
+                                Blocked / waiting for customer
+                                <span class="badge rounded-pill text-bg-secondary" t-esc="day.blocked_work.length"/>
+                            </button>
+                            <t t-if="state.showBlocked">
+                                <button t-foreach="day.blocked_work" t-as="item" t-key="item.key"
+                                        type="button" class="o_my_day_block" t-on-click="() => this.select(item)">
+                                    <span>
+                                        <strong t-esc="item.title"/>
+                                        <span t-if="item.followup_due" class="badge text-bg-warning ms-1">Follow up</span>
+                                        <small class="d-block">
+                                            Returns to your schedule on <t t-esc="item.return_date or item.followup_date"/>
+                                        </small>
+                                    </span>
+                                </button>
+                            </t>
+                        </div>
+
+                        <div t-if="day.shared_elsewhere.length" class="o_my_day_queue">
+                            <button type="button" class="o_my_day_queue_head" t-on-click="toggleShared">
+                                <i t-att-class="state.showShared ? 'fa fa-caret-down' : 'fa fa-caret-right'"/>
+                                Shared tasks scheduled by colleagues
+                            </button>
+                            <t t-if="state.showShared">
+                                <button t-foreach="day.shared_elsewhere" t-as="item" t-key="item.key"
+                                        type="button" class="o_my_day_block" t-on-click="() => this.select(item)">
+                                    <span><strong t-esc="item.title"/><small class="d-block" t-esc="item.subtitle"/></span>
+                                </button>
+                            </t>
+                        </div>
+                        <div t-if="day.queue_total" class="o_my_day_queue">
+                            <button type="button" class="o_my_day_queue_head" t-on-click="toggleQueue">
+                                <i t-att-class="state.showQueue ? 'fa fa-caret-down' : 'fa fa-caret-right'"/>
+                                Unscheduled work
+                                <span class="badge rounded-pill text-bg-secondary" t-esc="day.queue_total"/>
+                            </button>
+                            <t t-if="state.showQueue">
+                                <t t-foreach="day.queue" t-as="item" t-key="item.key">
+                                    <t t-call="daadit_my_day.Item">
+                                        <t t-set="itemClass" t-value="{ o_my_day_block: true, ['kind_' + item.kind]: true, selected: selected?.key === item.key }"/>
+                                        <t t-set="showTime" t-value="false"/>
+                                    </t>
+                                </t>
+                            </t>
+                        </div>
+                    </aside>
+
+                    <section class="o_my_day_right">
+                        <t t-if="selected">
+                            <div class="o_my_day_bar">
+                                <button type="button" class="btn btn-link o_my_day_back" t-on-click="closeDetail">
+                                    <i class="fa fa-arrow-left"/>
+                                </button>
+                                <div class="o_my_day_bar_text">
+                                    <small t-att-class="'kind_' + selected.kind">
+                                        <span class="o_my_day_kind" t-esc="kindLabel(selected.kind)"/>
+                                        <t t-if="selected.reason"> <t t-esc="selected.reason"/></t>
+                                        <t t-if="selected.outside_hours"> · Scheduled outside working hours</t>
+                                    </small>
+                                    <strong t-esc="selected.title"/>
+                                </div>
+                                <div t-if="canAct and day.is_today" class="o_my_day_timer" t-att-class="{ running: timerRunning }">
+                                    <button type="button" class="btn btn-light btn-sm" t-att-title="timerRunning ? labels.pause : labels.startTimer" t-att-disabled="state.busy" t-on-click="togglePause">
+                                        <i t-att-class="timerRunning ? 'fa fa-pause' : 'fa fa-play'"/>
+                                    </button>
+                                    <span class="o_my_day_clock_text">
+                                        <b t-esc="timerText"/>
+                                        <small t-if="selected.book_note" t-esc="selected.book_note"/>
+                                        <small t-elif="selected.booked_hours">Logged: <t t-esc="formatMinutes(selected.booked_hours * 60)"/></small>
+                                        <small t-else="">Will be logged</small>
+                                    </span>
+                                    <button t-if="['task', 'ticket'].includes(selected.kind)" type="button" class="btn btn-link btn-sm" t-on-click="toggleNoHours"
+                                            t-esc="selected.no_hours ? labels.enableTimesheets : labels.noTimesheet"/>
+                                </div>
+                                <div class="o_my_day_bar_actions">
+                                    <t t-if="canAct">
+                                        <span class="o_my_day_stepper">
+                                            <button type="button" class="btn btn-light btn-sm" title="15 minutes shorter" t-on-click="() => this.adjust(-15)">−</button>
+                                            <span t-esc="formatMinutes(selected.minutes)"/>
+                                            <button type="button" class="btn btn-light btn-sm" title="15 minutes longer" t-on-click="() => this.adjust(15)">+</button>
+                                        </span>
+                                        <button type="button" class="btn btn-secondary" t-att-disabled="state.busy" t-on-click="later">Later today</button>
+                                        <button type="button" class="btn btn-secondary" t-att-disabled="state.busy" t-on-click="defer">Defer</button>
+                                        <button t-if="!selected.outside_hours" type="button" class="btn btn-secondary" t-att-disabled="state.busy" t-on-click="planOutsideHours">Schedule outside working hours</button>
+                                        <button t-if="selected.kind === 'own'" type="button" class="btn btn-secondary" t-att-disabled="state.busy" t-on-click="remove">Remove</button>
+                                        <button t-if="selected.kind !== 'activity'" type="button" t-att-class="selected.kind === 'own' ? 'btn btn-primary' : 'btn btn-secondary'" t-att-disabled="state.busy" t-on-click="complete">
+                                            <i class="fa fa-check me-1"/>Done and next
+                                        </button>
+                                        <button t-if="selected.kind !== 'own'" type="button" class="btn btn-primary" t-att-disabled="state.busy" t-on-click="closeItem"
+                                                t-att-title="selected.kind === 'activity' ? labels.completeThisActivity : labels.closeTheTicketOrTaskAndContinue">
+                                            <i class="fa fa-flag-checkered me-1"/><t t-esc="selected.kind === 'activity' ? labels.completeActivity : labels.closeAndNext"/>
+                                        </button>
+                                    </t>
+                                    <button t-elif="!selected.shared_elsewhere and !selected.blocked and selected.block_id === undefined and selected.kind !== 'event' and !day.is_past" type="button" class="btn btn-primary" t-att-disabled="state.busy" t-on-click="() => this.pull(selected)">
+                                        <i class="fa fa-plus me-1"/>Schedule now
+                                    </button>
+                                    <button t-if="['task', 'ticket'].includes(selected.kind) and selected.res_id and !day.is_past and (canAct or !selected.block_id)"
+                                            type="button" class="btn btn-secondary" t-att-disabled="state.busy"
+                                            t-on-click="openBlockingForm"
+                                            t-esc="selected.blocked ? labels.editFollowUp : labels.blockWork"/>
+                                    <button t-if="['task', 'ticket'].includes(selected.kind) and selected.res_id and !selected.blocked and !day.is_past and (canAct or !selected.block_id)"
+                                            type="button" class="btn btn-secondary" t-att-disabled="state.busy"
+                                            t-on-click="openEstimateForm"
+                                            t-esc="selected.estimate ? labels.timeEstimate : labels.addEstimate"/>
+                                    <button t-if="canAct" type="button" class="btn btn-secondary"
+                                            t-att-disabled="state.busy" t-on-click="openFocusForm">Daily goal and focus</button>
+                                    <button t-if="selected.shared_task and !selected.blocked and !day.is_past"
+                                            type="button" class="btn btn-secondary" t-att-disabled="state.busy"
+                                            t-on-click="openSharedForm">Shared scheduling</button>
+                                    <button t-if="selected.blocked" type="button" class="btn btn-primary"
+                                            t-att-disabled="state.busy" t-on-click="unblock">Unblock</button>
+                                </div>
+                            </div>
+                            <div t-if="selected.next_step" class="o_my_day_step">
+                                <i class="fa fa-lightbulb-o me-2"/><span t-esc="selected.next_step"/>
+                            </div>
+                            <div t-if="selected.blocked" class="o_my_day_banner warn o_my_day_blocked">
+                                <strong t-esc="selected.blocked === 'customer' ? labels.waitingForCustomer : labels.blocked"/>
+                                <span t-esc="selected.block_reason or selected.reason"/>
+                                <span>
+                                    <t t-if="selected.followup_due">Follow up now.</t>
+                                    <t t-else="">Returns on <t t-esc="selected.return_date or selected.followup_date"/>.</t>
+                                    Owner: <t t-esc="selected.followup_user"/>
+                                </span>
+                            </div>
+                            <div t-if="selected.activities and selected.activities.length" class="o_my_day_activities">
+                                <div t-foreach="selected.activities" t-as="activity" t-key="activity.id" class="o_my_day_activity">
+                                    <i class="fa fa-clock-o"/>
+                                    <span>
+                                        <strong t-esc="activity.title"/>
+                                        <small t-att-class="activity.overdue ? 'text-danger ms-2' : 'text-muted ms-2'">by <t t-esc="activity.due"/></small>
+                                    </span>
+                                    <button type="button" class="btn btn-link btn-sm ms-auto" t-att-disabled="state.busy"
+                                            t-on-click="() => this.completeActivity(activity)">Complete activity</button>
+                                </div>
+                            </div>
+                            <form t-if="state.blockingForm" class="p-3 border-bottom"
+                                  t-on-submit.prevent="saveBlockingForm">
+                                <label class="form-label d-block">Type
+                                    <select class="form-select" t-model="state.blockingForm.kind">
+                                        <option value="blocked">Blocked</option>
+                                        <option value="customer">Waiting for customer</option>
+                                    </select>
+                                </label>
+                                <label class="form-label d-block">Reason for blocking
+                                    <input class="form-control" type="text" required="required"
+                                           t-model="state.blockingForm.reason"/>
+                                </label>
+                                <label class="form-label d-block">Follow-up date
+                                    <input class="form-control" type="date" required="required"
+                                           t-att-min="state.blockingForm.today" t-model="state.blockingForm.followup"/>
+                                </label>
+                                <label class="form-label d-block">Owner
+                                    <select class="form-select" required="required" t-model="state.blockingForm.userId">
+                                        <option t-foreach="state.blockingForm.users" t-as="user" t-key="user.id"
+                                                t-att-value="user.id" t-esc="user.name"/>
+                                    </select>
+                                </label>
+                                <button type="submit" class="btn btn-primary me-2" t-att-disabled="state.busy">Save follow-up</button>
+                                <button type="button" class="btn btn-secondary" t-on-click="cancelBlockingForm">Cancel</button>
+                            </form>
+                            <form t-if="state.estimateForm" class="p-3 border-bottom" t-on-submit.prevent="saveEstimateForm">
+                                <p t-if="!state.estimateForm.known">There is no time estimate yet. My Day uses the default duration.</p>
+                                <label class="form-label d-block">Remaining minutes
+                                    <input class="form-control" type="number" min="0" max="4800" step="1" required="required"
+                                           t-model="state.estimateForm.remaining"/>
+                                </label>
+                                <label class="form-label d-block">Maximum minutes per block
+                                    <input class="form-control" type="number" min="5" max="180" step="1" required="required"
+                                           t-model="state.estimateForm.maxBlock"/>
+                                </label>
+                                <p class="small">Enter 0 to clear the estimate. Rescheduling splits the remaining work into blocks that fit.</p>
+                                <div t-if="state.estimateForm.suggestion" class="mb-2">
+                                    <t t-set="suggestion" t-value="state.estimateForm.suggestion"/>
+                                    <span>Suggestion: <strong t-esc="formatMinutes(suggestion.remaining)"/> remaining. Based on
+                                        <t t-esc="suggestion.count"/> completed items with validated hours in this project. Typical actual time: <t t-esc="formatMinutes(suggestion.actual)"/>.
+                                        <t t-if="suggestion.estimated">Typical estimate: <t t-esc="formatMinutes(suggestion.estimated)"/>.</t>
+                                    </span>
+                                    <button type="button" class="btn btn-link" t-on-click="applyEstimateSuggestion">Use suggestion</button>
+                                </div>
+                                <button type="submit" class="btn btn-primary me-2" t-att-disabled="state.busy">Save estimate</button>
+                                <button type="button" class="btn btn-secondary" t-on-click="cancelEstimateForm">Cancel</button>
+                            </form>
+                            <form t-if="state.focusForm" class="p-3 border-bottom" t-on-submit.prevent="saveFocusForm">
+                                <label class="form-check">
+                                    <input type="checkbox" class="form-check-input" t-model="state.focusForm.goal"/>
+                                    <span class="form-check-label">Daily goal (up to three per day)</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" class="form-check-input" t-model="state.focusForm.focus"/>
+                                    <span class="form-check-label">Protect this focus block when rescheduling</span>
+                                </label>
+                                <label t-if="state.focusForm.focus" class="form-check mb-2">
+                                    <input type="checkbox" class="form-check-input" t-model="state.focusForm.interruptible"/>
+                                    <span class="form-check-label">Allow this block to move if an urgent ticket cannot otherwise fit today</span>
+                                </label>
+                                <button type="submit" class="btn btn-primary me-2" t-att-disabled="state.busy">Save</button>
+                                <button type="button" class="btn btn-secondary" t-on-click="cancelFocusForm">Cancel</button>
+                            </form>
+                            <form t-if="state.sharedForm" class="p-3 border-bottom"
+                                  t-on-submit.prevent="saveSharedForm">
+                                <label class="form-label d-block">Scheduling owner
+                                    <select class="form-select" t-model="state.sharedForm.owner">
+                                        <option t-foreach="state.sharedForm.users" t-as="user" t-key="user.id"
+                                                t-att-value="user.id" t-esc="user.name"/>
+                                    </select>
+                                </label>
+                                <label class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" t-model="state.sharedForm.parallel"/>
+                                    <span class="form-check-label">Assigned employees can schedule work in parallel</span>
+                                </label>
+                                <label t-if="selected.block_id" class="form-label d-block">My part of this block
+                                    <input class="form-control" type="text" maxlength="200" t-model="state.sharedForm.part"/>
+                                </label>
+                                <ul t-if="state.sharedForm.slots.length">
+                                    <li t-foreach="state.sharedForm.slots" t-as="slot" t-key="slot.id">
+                                        <t t-esc="slot.user"/> · <t t-esc="slot.start"/>–<t t-esc="slot.end"/>
+                                        <t t-if="slot.part"> · <t t-esc="slot.part"/></t>
+                                    </li>
+                                </ul>
+                                <button type="submit" class="btn btn-primary me-2" t-att-disabled="state.busy">Save shared scheduling</button>
+                                <button type="button" class="btn btn-secondary" t-on-click="cancelSharedForm">Cancel</button>
+                            </form>
+                            <div class="o_my_day_record">
+                                <MyDayRecord t-if="selected.res_model and selected.res_id"
+                                             t-key="selected.res_model + selected.res_id"
+                                             resModel="selected.res_model" resId="selected.res_id"
+                                             recorder="recorder"/>
+                                <div t-else="" class="o_my_day_center">
+                                    <h3 t-esc="selected.title"/>
+                                    <p>Personal work. Click Done and next when finished.</p>
+                                </div>
+                            </div>
+                        </t>
+                        <div t-else="" class="o_my_day_center">
+                            <i class="fa fa-coffee fa-2x mb-3"/>
+                            <h3 t-if="day.is_past">There are no open work blocks for this day.</h3>
+                            <h3 t-elif="day.off_day">There are no working hours scheduled for this day.</h3>
+                            <h3 t-elif="day.stats.free">No work is planned in your remaining working hours.</h3>
+                            <h3 t-else="">There is no free time left in your working schedule.</h3>
+                        </div>
+                    </section>
+                </div>
+                </t>
+            </t>
+        </div>
+    </t>
+    <t t-name="daadit_my_day.Review">
+        <section class="p-3 flex-grow-1 overflow-auto">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h4 mb-0" t-esc="props.mode === 'done' ? labels.completed : labels.dayReview"/>
+                <button type="button" class="btn btn-secondary" t-on-click="props.onClose">Back to My Day</button>
+            </div>
+            <t t-if="state.result">
+                <form t-if="props.mode === 'done'" class="d-flex flex-wrap gap-2 align-items-end mb-3"
+                      t-on-submit.prevent="load">
+                    <label>From <input type="date" class="form-control" required="required" t-model="state.from"/></label>
+                    <label>Through <input type="date" class="form-control" required="required" t-model="state.to"/></label>
+                    <label t-if="state.result.employees.length > 1">Employee
+                        <select class="form-select" t-model="state.employee">
+                            <option t-foreach="state.result.employees" t-as="person" t-key="person.id"
+                                    t-att-value="person.id" t-esc="person.name"/>
+                        </select>
+                    </label>
+                    <button type="submit" class="btn btn-primary" t-att-disabled="state.busy">Show</button>
+                </form>
+                <p>
+                    <strong t-esc="duration(state.result.seconds / 60)"/> worked ·
+                    <strong t-esc="duration(state.result.booked * 60)"/> logged
+                    <t t-if="props.mode === 'day'">
+                        · <strong t-esc="state.result.missing"/> without an expected timesheet entry · <strong t-esc="state.result.open"/> open
+                    </t>
+                </p>
+                <form t-if="state.correction" class="border rounded p-3 mb-3"
+                      t-on-submit.prevent="saveCorrection">
+                    <strong t-esc="state.correction.row.title"/>
+                    <label class="form-label d-block mt-2">Minutes worked
+                        <input type="number" min="0" max="1440" step="1" required="required"
+                               class="form-control" t-model="state.correction.minutes"/>
+                    </label>
+                    <label class="form-label d-block">Reason for correction
+                        <input type="text" class="form-control" required="required" t-model="state.correction.reason"/>
+                    </label>
+                    <ul t-if="state.correction.row.time_history.length" class="small">
+                        <li t-foreach="state.correction.row.time_history" t-as="change" t-key="change_index">
+                            <t t-esc="change.date"/> UTC · <t t-esc="change.user"/> ·
+                            <t t-esc="duration(change.before / 60)"/> → <t t-esc="duration(change.after / 60)"/> ·
+                            <t t-esc="change.reason"/>
+                        </li>
+                    </ul>
+                    <button type="submit" class="btn btn-primary me-2" t-att-disabled="state.busy">Save correction</button>
+                    <button type="button" class="btn btn-secondary" t-on-click="cancelCorrection">Cancel</button>
+                </form>
+                <p t-if="!state.result.rows.length">No work blocks in this period.</p>
+                <div t-else="" class="table-responsive">
+                    <table class="table align-middle">
+                        <thead><tr><th>Date</th><th>Work</th><th>Scheduled</th><th>Worked</th><th>Timesheet entry</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr t-foreach="state.result.rows" t-as="row" t-key="row.id">
+                                <td><t t-esc="row.date"/> <t t-esc="row.start"/></td>
+                                <td>
+                                    <button t-if="row.source_id" type="button" class="btn btn-link p-0 text-start"
+                                            t-on-click="() => this.openRecord(row.source_model, row.source_id)" t-esc="row.title"/>
+                                    <span t-else="" t-esc="row.title"/>
+                                    <small class="d-block text-muted" t-esc="row.done ? labels.done : 'Open'"/>
+                                </td>
+                                <td t-esc="duration(row.planned)"/>
+                                <td t-esc="duration(row.seconds / 60)"/>
+                                <td>
+                                    <button t-if="row.line_id" type="button" class="btn btn-link p-0"
+                                            t-on-click="() => this.openRecord('account.analytic.line', row.line_id)"
+                                            t-esc="duration(row.booked * 60)"/>
+                                    <span t-elif="row.missing" class="text-warning-emphasis">Missing</span>
+                                    <span t-else="">–</span>
+                                </td>
+                                <td class="text-nowrap">
+                                    <button t-if="row.can_correct" type="button" class="btn btn-link btn-sm"
+                                            t-on-click="() => this.openCorrection(row)">Correct time</button>
+                                    <t t-if="state.result.can_close and !row.done">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm me-1" t-att-disabled="state.busy"
+                                            t-on-click="() => this.resolve(row, 'defer')">Defer</button>
+                                    <button type="button" class="btn btn-primary btn-sm" t-att-disabled="state.busy"
+                                            t-on-click="() => this.resolve(row, 'complete')"
+                                            t-esc="row.kind === 'activity' ? labels.completeActivity : labels.finishBlock"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </section>
+    </t>
+</templates>
