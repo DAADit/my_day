@@ -2,6 +2,8 @@
 
 My Day brings open work and upcoming appointments together. Add this repository to the Odoo add-ons path, refresh the Apps list, and choose the installation that fits the customer.
 
+[Korte installatiehandleiding voor klanten met To-do of Helpdesk](INSTALLATIE.md)
+
 | Add-on | Use it for | Requirements |
 | --- | --- | --- |
 | `daadit_my_day_core` | Open work, personal drag-and-drop priorities, employee filters, assignment, direct record access, and upcoming appointments | Odoo Web and Mail |
