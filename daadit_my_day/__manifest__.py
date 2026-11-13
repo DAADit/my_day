@@ -13,7 +13,7 @@ Work blocks are Planning shifts linked to a ticket or task. Working hours,
 time off and appointments determine availability. A shift with the
 "No helpdesk" role keeps the day free of tickets.
 """,
-    "version": "19.0.1.10.0",
+    "version": "19.0.1.10.1",
     "category": "Productivity",
     "author": "DAADit",
     "website": "https://daadit.group",

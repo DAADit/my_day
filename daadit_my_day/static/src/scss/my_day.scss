@@ -111,7 +111,7 @@ $o-my-day-accent: #6b6fee;
     }
 
     .kind_ticket { --kind: #e8710a; }
-    .kind_task { --kind: #2f7df0; }
+    .kind_task, .kind_todo { --kind: #2f7df0; }
     .kind_own { --kind: #1aa179; }
     .kind_event { --kind: #868e96; }
     .kind_activity { --kind: #7c54ae; }

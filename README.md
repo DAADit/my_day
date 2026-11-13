@@ -10,7 +10,7 @@ My Day brings open work and upcoming appointments together. Add this repository 
 | `daadit_my_day` | The full day planner with working hours, automatic scheduling, focus blocks, time tracking, blocked-work follow-up, team priorities, and Gantt | Odoo 19 Enterprise with Calendar, Employees, Project, Helpdesk, Timesheets, Helpdesk Timesheets, and Planning |
 | `daadit_my_day_microsoft` | Optional delegated Microsoft 365 mail import for the full planner | Full planner and a customer-owned Microsoft Entra application |
 
-Choose one of the first two add-ons per database. They expose separate My Day launchers and store their personal priority order separately.
+Choose one of the first two add-ons per database. They expose separate My Day launchers and store their personal priority order separately. In the full planner, installing Odoo To-do adds a separate To-dos filter in Priorities; To-do is optional.
 
 ## Sources in the lightweight installation
 

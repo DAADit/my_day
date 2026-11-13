@@ -1389,6 +1389,18 @@ msgid "Tasks ("
 msgstr "Taken ("
 
 #. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/js/my_day_priorities.js:0
+msgid "To-do"
+msgstr "To-do"
+
+#. module: daadit_my_day
+#. odoo-javascript
+#: code:addons/daadit_my_day/static/src/xml/my_day_priorities.xml:0
+msgid "To-dos ("
+msgstr "To-do’s ("
+
+#. module: daadit_my_day
 #. odoo-python
 #: code:addons/daadit_my_day/models/my_day.py:0
 msgid "That duration does not fit here. Pause or move the block first."
